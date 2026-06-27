@@ -1,0 +1,18 @@
+{
+  "name": "nyc-tlc-analytics",
+  "image": "mcr.microsoft.com/devcontainers/python:3.12",
+  "postCreateCommand": "pip install -r requirements.txt",
+  "remoteEnv": {
+    "GCP_PROJECT_ID": "${localEnv:GCP_PROJECT_ID}",
+    "GCP_SA_KEY": "${localEnv:GCP_SA_KEY}"
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-python.python",
+        "dbt-labs.dbt-power-user",
+        "googlecloudtools.cloudcode"
+      ]
+    }
+  }
+}
