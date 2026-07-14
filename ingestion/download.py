@@ -6,7 +6,7 @@ def download(trip_type,year,month):
         response = rq.get(url, timeout= 60,stream=True)
 
         if response.status_code ==200:
-            with open(f"{trip_type}-{year}-{month}.parquet","wb") as file:
+            with open(f"../data/{trip_type}-{year}-{month}.parquet","wb") as file:
                 for chunk in response.iter_content(chunk_size=1024):
                     file.write(chunk)
             print(f"Downloaded {trip_type}_{year}_{month}")
