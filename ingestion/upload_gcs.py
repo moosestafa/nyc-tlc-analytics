@@ -24,12 +24,16 @@ def upload_gcs(filepath,bucket_name,destination_path):
     #error handling for bucket not being found, insufficient IAM roles and general GC errors
     except exceptions.NotFound:
         print(f"Bucket {bucket_name} not found")
+        raise
     except exceptions.Forbidden:
         print(f"Permission denied — check service account roles")
+        raise
     except exceptions.GoogleCloudError as e:
         print(f"GCP error: {e}")
+        raise
     except Exception as e:
         print(f"Unexpected error: {e}")
+        raise
     
 
-upload_gcs("data/yellow-2015-01.parquet","nyc-tlc-raw-500621","yellow/2015/01/yellow-2015-01.parquet")
+#upload_gcs("data/yellow-2015-01.parquet","nyc-tlc-raw-500621","yellow/2015/01/yellow-2015-01.parquet")
