@@ -22,4 +22,4 @@ def ingest(trip_type, year, month):
             print(f"Error occured at {trip_type}, {year}, {month}")
             raise
 
-
+ingest("green", 2015, 1)

@@ -1,4 +1,8 @@
-Select VendorID AS vendor_id,
+
+
+  create or replace view `nyc-tlc-analytics-500621`.`staging`.`stg_yellow`
+  OPTIONS()
+  as Select VendorID AS vendor_id,
 tpep_pickup_datetime AS pickup_datetime,
 tpep_dropoff_datetime AS dropoff_datetime,
 passenger_count AS passenger_count,
@@ -18,4 +22,5 @@ total_amount AS total_amount,
 congestion_surcharge AS congestion_surcharge,
 airport_fee AS airport_fee,
 'yellow' AS trip_type
-from {{source('raw','yellow_trips')}}
+from `nyc-tlc-analytics-500621`.`raw`.`yellow_trips`;
+

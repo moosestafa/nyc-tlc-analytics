@@ -1,0 +1,242 @@
+==================== 2026-08-06T22:53:27.920314Z | 019fd948-15b1-7ae1-8d9a-be68de3b0d20 ====================
+22:53:27.956313 [info ]: dbt-core 2.0.0-alpha.4
+22:53:28.138165 [info ]: Started loading project
+22:53:28.811211 [info ]: Loading ~/.dbt/profiles.yml
+22:53:28.823707 [info ]: Finished loading project [  0.69s]
+22:53:28.823818 [error]: [InvalidConfig (dbt1005)]: Jinja render error: unknown filter: filter fromjson is unknown
+(in :1:1)
+22:53:28.858496 [info ]: 
+==================== Execution Summary =====================
+Finished 'debug' with 1 error [938ms]
+==================== 2026-08-06T23:07:26.150268Z | 019fd954-e008-7451-b082-fb6c4b699ced ====================
+23:07:26.168619 [info ]: dbt-core 2.0.0-alpha.5
+23:07:26.202495 [info ]: Started loading project
+23:07:26.266744 [info ]: Loading ~/.dbt/profiles.yml
+23:07:26.281899 [info ]: Finished loading project [  0.08s]
+23:07:26.291010 [error]: [SerializationError (dbt1013)]: YAML error: did not find expected key at line 11 column 61, while parsing a block mapping at line 5 column 7
+  --> ../../../home/vscode/.dbt/profiles.yml:11:61
+23:07:26.494542 [info ]: 
+==================== Execution Summary =====================
+Finished 'debug' with 1 error [344ms]
+[0m23:11:00.142782 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x708b90884cb0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x708b9173e030>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x708b90af4e60>]}
+
+
+============================== 23:11:00.162245 | 0ca5fec9-74d8-419e-8912-53cc15ea59ca ==============================
+[0m23:11:00.162245 [info ] [MainThread]: Running with dbt=1.8.0
+[0m23:11:00.163878 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/home/vscode/.dbt', 'fail_fast': 'False', 'version_check': 'True', 'log_path': '/workspaces/nyc-tlc-analytics/dbt/logs', 'debug': 'False', 'warn_error': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'log_format': 'default', 'invocation_command': 'dbt debug', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'target_path': 'None', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m23:11:00.186740 [info ] [MainThread]: dbt version: 1.8.0
+[0m23:11:00.188599 [info ] [MainThread]: python version: 3.12.13
+[0m23:11:00.189247 [info ] [MainThread]: python path: /usr/local/bin/python3.12
+[0m23:11:00.190207 [info ] [MainThread]: os info: Linux-6.8.0-1052-azure-x86_64-with-glibc2.41
+[0m23:11:00.191699 [error] [MainThread]: Encountered an error:
+Runtime Error
+  Syntax error near line 11
+  ------------------------------
+  8  |       dataset: staging          # default schema dbt writes to
+  9  |       threads: 4
+  10 |       location: US
+  11 |       keyfile_json: "{{ env_var('GCP_SA_KEY') | fromjson }}"pip show dbt-bigquery
+  
+  Raw Error:
+  ------------------------------
+  while parsing a block mapping
+    in "<unicode string>", line 5, column 7
+  did not find expected key
+    in "<unicode string>", line 11, column 61
+[0m23:11:00.199344 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_wall_clock_time": 0.066715516, "process_user_time": 1.405358, "process_kernel_time": 0.257817, "process_mem_max_rss": "95676", "process_in_blocks": "46016", "process_out_blocks": "16", "command_success": false}
+[0m23:11:00.200818 [debug] [MainThread]: Command `dbt debug` failed at 23:11:00.200674 after 0.07 seconds
+[0m23:11:00.203236 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x708b94beb050>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x708b90886a80>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x708b90cd39e0>]}
+[0m23:11:00.204194 [debug] [MainThread]: Flushing usage events
+[0m23:15:45.970429 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x772aa3418e00>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x772aa3860b00>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x772aa3419100>]}
+
+
+============================== 23:15:45.989946 | 88d4cbdc-c099-4be3-9d62-05249ed4ab56 ==============================
+[0m23:15:45.989946 [info ] [MainThread]: Running with dbt=1.8.0
+[0m23:15:45.990771 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/home/vscode/.dbt', 'debug': 'False', 'version_check': 'True', 'log_path': '/workspaces/nyc-tlc-analytics/dbt/logs', 'warn_error': 'None', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'log_format': 'default', 'invocation_command': 'dbt debug', 'target_path': 'None', 'introspect': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m23:15:46.018340 [info ] [MainThread]: dbt version: 1.8.0
+[0m23:15:46.019985 [info ] [MainThread]: python version: 3.12.13
+[0m23:15:46.020746 [info ] [MainThread]: python path: /usr/local/bin/python3.12
+[0m23:15:46.021529 [info ] [MainThread]: os info: Linux-6.8.0-1052-azure-x86_64-with-glibc2.41
+[0m23:15:46.022446 [error] [MainThread]: Encountered an error:
+Runtime Error
+  Syntax error near line 11
+  ------------------------------
+  8  |       dataset: staging          # default schema dbt writes to
+  9  |       threads: 4
+  10 |       location: US
+  11 |       keyfile_json: "{{ env_var('GCP_SA_KEY') | fromjson }}"pip show dbt-bigquery
+  
+  Raw Error:
+  ------------------------------
+  while parsing a block mapping
+    in "<unicode string>", line 5, column 7
+  did not find expected key
+    in "<unicode string>", line 11, column 61
+[0m23:15:46.027301 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_wall_clock_time": 0.06413485, "process_user_time": 1.439439, "process_kernel_time": 0.231021, "process_mem_max_rss": "95904", "process_in_blocks": "27504", "process_out_blocks": "8", "command_success": false}
+[0m23:15:46.028308 [debug] [MainThread]: Command `dbt debug` failed at 23:15:46.028179 after 0.07 seconds
+[0m23:15:46.029246 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x772aa3689190>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x772aa343d130>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x772aa3418e00>]}
+[0m23:15:46.030253 [debug] [MainThread]: Flushing usage events
+[0m23:16:32.642745 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x79dc09b68e00>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x79dc09b69190>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x79dc09b68cb0>]}
+
+
+============================== 23:16:32.655031 | e259561f-2113-4fe3-92c2-dce016b76399 ==============================
+[0m23:16:32.655031 [info ] [MainThread]: Running with dbt=1.8.0
+[0m23:16:32.655833 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/home/vscode/.dbt', 'debug': 'False', 'fail_fast': 'False', 'log_path': '/workspaces/nyc-tlc-analytics/dbt/logs', 'warn_error': 'None', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'log_format': 'default', 'introspect': 'True', 'target_path': 'None', 'invocation_command': 'dbt debug', 'send_anonymous_usage_stats': 'True'}
+[0m23:16:32.667873 [info ] [MainThread]: dbt version: 1.8.0
+[0m23:16:32.668470 [info ] [MainThread]: python version: 3.12.13
+[0m23:16:32.668949 [info ] [MainThread]: python path: /usr/local/bin/python3.12
+[0m23:16:32.669423 [info ] [MainThread]: os info: Linux-6.8.0-1052-azure-x86_64-with-glibc2.41
+[0m23:16:32.670403 [error] [MainThread]: Encountered an error:
+Runtime Error
+  Syntax error near line 11
+  ------------------------------
+  8  |       dataset: staging          # default schema dbt writes to
+  9  |       threads: 4
+  10 |       location: US
+  11 |       keyfile_json: "{{ env_var('GCP_SA_KEY') | fromjson }}"pip show dbt-bigquery
+  
+  Raw Error:
+  ------------------------------
+  while parsing a block mapping
+    in "<unicode string>", line 5, column 7
+  did not find expected key
+    in "<unicode string>", line 11, column 61
+[0m23:16:32.671679 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_wall_clock_time": 0.036176447, "process_user_time": 1.455366, "process_kernel_time": 0.201211, "process_mem_max_rss": "95840", "process_in_blocks": "20456", "process_out_blocks": "16", "command_success": false}
+[0m23:16:32.672417 [debug] [MainThread]: Command `dbt debug` failed at 23:16:32.672278 after 0.04 seconds
+[0m23:16:32.673088 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x79dc09b68e00>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x79dc0a1d4530>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x79dc09bac9e0>]}
+[0m23:16:32.673849 [debug] [MainThread]: Flushing usage events
+[0m23:17:18.078067 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ba3b8c3ac90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ba3b70d5bb0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ba3b6d09b20>]}
+
+
+============================== 23:17:18.098778 | 1c643e2f-b176-4a40-bf9c-fafb686fdf9d ==============================
+[0m23:17:18.098778 [info ] [MainThread]: Running with dbt=1.8.0
+[0m23:17:18.099607 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/home/vscode/.dbt', 'version_check': 'True', 'fail_fast': 'False', 'log_path': '/workspaces/nyc-tlc-analytics/dbt/logs', 'warn_error': 'None', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'introspect': 'True', 'invocation_command': 'dbt debug', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m23:17:18.139865 [info ] [MainThread]: dbt version: 1.8.0
+[0m23:17:18.140642 [info ] [MainThread]: python version: 3.12.13
+[0m23:17:18.141296 [info ] [MainThread]: python path: /usr/local/bin/python3.12
+[0m23:17:18.141934 [info ] [MainThread]: os info: Linux-6.8.0-1052-azure-x86_64-with-glibc2.41
+[0m23:17:23.203281 [info ] [MainThread]: Using profiles dir at /home/vscode/.dbt
+[0m23:17:23.205816 [info ] [MainThread]: Using profiles.yml file at /home/vscode/.dbt/profiles.yml
+[0m23:17:23.209024 [info ] [MainThread]: Using dbt_project.yml file at /workspaces/nyc-tlc-analytics/dbt/dbt_project.yml
+[0m23:17:23.210210 [info ] [MainThread]: adapter type: bigquery
+[0m23:17:23.211599 [info ] [MainThread]: adapter version: 1.8.0
+[0m23:17:23.402724 [info ] [MainThread]: Configuration:
+[0m23:17:23.403616 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m23:17:23.404219 [info ] [MainThread]:   dbt_project.yml file [[32mOK found and valid[0m]
+[0m23:17:23.404638 [info ] [MainThread]: Required dependencies:
+[0m23:17:23.405135 [debug] [MainThread]: Executing "git --help"
+[0m23:17:23.408801 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--no-lazy-fetch]\n           [--no-optional-locks] [--no-advice] [--bare] [--git-dir=<path>]\n           [--work-tree=<path>] [--namespace=<name>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone      Clone a repository into a new directory\n   init       Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add        Add file contents to the index\n   mv         Move or rename a file, a directory, or a symlink\n   restore    Restore working tree files\n   rm         Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect     Use binary search to find the commit that introduced a bug\n   diff       Show changes between commits, commit and working tree, etc\n   grep       Print lines matching a pattern\n   log        Show commit logs\n   show       Show various types of objects\n   status     Show the working tree status\n\ngrow, mark and tweak your common history\n   backfill   Download missing objects in a partial clone\n   branch     List, create, or delete branches\n   commit     Record changes to the repository\n   history    EXPERIMENTAL: Rewrite history\n   merge      Join two or more development histories together\n   rebase     Reapply commits on top of another base tip\n   reset      Set `HEAD` or the index to a known state\n   switch     Switch branches\n   tag        Create, list, delete or verify tags\n\ncollaborate (see also: git help workflows)\n   fetch      Download objects and refs from another repository\n   pull       Fetch from and integrate with another repository or a local branch\n   push       Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m23:17:23.409459 [debug] [MainThread]: STDERR: "b''"
+[0m23:17:23.409922 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m23:17:23.410972 [info ] [MainThread]: Connection:
+[0m23:17:23.411471 [info ] [MainThread]:   method: service-account
+[0m23:17:23.411923 [info ] [MainThread]:   database: nyc-tlc-analytics-500621
+[0m23:17:23.412408 [info ] [MainThread]:   execution_project: nyc-tlc-analytics-500621
+[0m23:17:23.412831 [info ] [MainThread]:   schema: staging
+[0m23:17:23.413336 [info ] [MainThread]:   location: US
+[0m23:17:23.413767 [info ] [MainThread]:   priority: None
+[0m23:17:23.414206 [info ] [MainThread]:   maximum_bytes_billed: None
+[0m23:17:23.414649 [info ] [MainThread]:   impersonate_service_account: None
+[0m23:17:23.415060 [info ] [MainThread]:   job_retry_deadline_seconds: None
+[0m23:17:23.415536 [info ] [MainThread]:   job_retries: 1
+[0m23:17:23.415960 [info ] [MainThread]:   job_creation_timeout_seconds: None
+[0m23:17:23.416505 [info ] [MainThread]:   job_execution_timeout_seconds: None
+[0m23:17:23.416969 [info ] [MainThread]:   timeout_seconds: None
+[0m23:17:23.417449 [info ] [MainThread]:   client_id: None
+[0m23:17:23.417899 [info ] [MainThread]:   token_uri: None
+[0m23:17:23.418371 [info ] [MainThread]:   dataproc_region: None
+[0m23:17:23.418819 [info ] [MainThread]:   dataproc_cluster_name: None
+[0m23:17:23.419279 [info ] [MainThread]:   gcs_bucket: None
+[0m23:17:23.419703 [info ] [MainThread]:   dataproc_batch: None
+[0m23:17:23.420397 [info ] [MainThread]: Registered adapter: bigquery=1.8.0
+[0m23:17:23.729939 [debug] [MainThread]: Acquiring new bigquery connection 'debug'
+[0m23:17:23.730642 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m23:17:23.788973 [debug] [MainThread]: On debug: select 1 as id
+[0m23:17:24.826847 [debug] [MainThread]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=nyc-tlc-analytics-500621&j=bq:US:77ac8e5e-f897-4875-8f39-f8a4c5d589fb&page=queryresults
+[0m23:17:25.252671 [info ] [MainThread]:   Connection test: [[32mOK connection ok[0m]
+
+[0m23:17:25.253436 [info ] [MainThread]: [32mAll checks passed![0m
+[0m23:17:25.256512 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_success": true, "command_wall_clock_time": 7.230371, "process_user_time": 2.790315, "process_kernel_time": 0.684905, "process_mem_max_rss": "219668", "process_in_blocks": "229576", "process_out_blocks": "40"}
+[0m23:17:25.257538 [debug] [MainThread]: Command `dbt debug` succeeded at 23:17:25.257400 after 7.23 seconds
+[0m23:17:25.258037 [debug] [MainThread]: Connection 'debug' was properly closed.
+[0m23:17:25.258679 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ba3b70989b0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ba3b6c9fc80>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ba3a49f0860>]}
+[0m23:17:25.259352 [debug] [MainThread]: Flushing usage events
+[0m00:40:16.957536 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ed54b96b7a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ed54bd4cb30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ed54bf12a20>]}
+
+
+============================== 00:40:17.118334 | 677341a8-f299-4917-91b4-bfa34be7346e ==============================
+[0m00:40:17.118334 [info ] [MainThread]: Running with dbt=1.8.0
+[0m00:40:17.119036 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'debug': 'False', 'profiles_dir': '/home/vscode/.dbt', 'log_path': '/workspaces/nyc-tlc-analytics/dbt/logs', 'fail_fast': 'False', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'static_parser': 'True', 'invocation_command': 'dbt run --select stg_yellow', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m00:40:33.242717 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '677341a8-f299-4917-91b4-bfa34be7346e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ed53cec10a0>]}
+[0m00:40:33.297832 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '677341a8-f299-4917-91b4-bfa34be7346e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ed53913b620>]}
+[0m00:40:33.298676 [info ] [MainThread]: Registered adapter: bigquery=1.8.0
+[0m00:40:33.577207 [debug] [MainThread]: checksum: dbb12d416fdb55e3665e4828703bbedf40c5c90ed7ca6ff39bbbfb29b12b0a92, vars: {}, profile: , target: , version: 1.8.0
+[0m00:40:33.578049 [info ] [MainThread]: Unable to do partial parsing because saved manifest not found. Starting full parse.
+[0m00:40:33.578501 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': '677341a8-f299-4917-91b4-bfa34be7346e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ed538ee21e0>]}
+[0m00:40:34.902915 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '677341a8-f299-4917-91b4-bfa34be7346e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ed5389f0860>]}
+[0m00:40:34.995423 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '677341a8-f299-4917-91b4-bfa34be7346e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ed538e858b0>]}
+[0m00:40:34.996015 [info ] [MainThread]: Found 10 models, 1 source, 484 macros
+[0m00:40:34.996442 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '677341a8-f299-4917-91b4-bfa34be7346e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ed538a3d3d0>]}
+[0m00:40:34.998359 [info ] [MainThread]: 
+[0m00:40:34.999181 [debug] [MainThread]: Acquiring new bigquery connection 'master'
+[0m00:40:35.000375 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_nyc-tlc-analytics-500621'
+[0m00:40:35.000889 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m00:40:35.376856 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_nyc-tlc-analytics-500621, now list_nyc-tlc-analytics-500621_staging)
+[0m00:40:35.377437 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m00:40:35.733537 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '677341a8-f299-4917-91b4-bfa34be7346e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ed538e86180>]}
+[0m00:40:35.734383 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m00:40:35.734869 [info ] [MainThread]: 
+[0m00:40:35.745133 [debug] [Thread-1 (]: Began running node model.nyc_tlc_analytics.stg_yellow
+[0m00:40:35.745844 [info ] [Thread-1 (]: 1 of 1 START sql view model staging.stg_yellow ................................. [RUN]
+[0m00:40:35.746364 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_nyc-tlc-analytics-500621_staging, now model.nyc_tlc_analytics.stg_yellow)
+[0m00:40:35.746920 [debug] [Thread-1 (]: Began compiling node model.nyc_tlc_analytics.stg_yellow
+[0m00:40:35.755071 [debug] [Thread-1 (]: Writing injected SQL for node "model.nyc_tlc_analytics.stg_yellow"
+[0m00:40:35.756006 [debug] [Thread-1 (]: Began executing node model.nyc_tlc_analytics.stg_yellow
+[0m00:40:35.790729 [debug] [Thread-1 (]: Writing runtime sql for node "model.nyc_tlc_analytics.stg_yellow"
+[0m00:40:35.791742 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m00:40:35.844028 [debug] [Thread-1 (]: On model.nyc_tlc_analytics.stg_yellow: /* {"app": "dbt", "dbt_version": "1.8.0", "profile_name": "nyc_tlc_analytics", "target_name": "dev", "node_id": "model.nyc_tlc_analytics.stg_yellow"} */
+
+
+  create or replace view `nyc-tlc-analytics-500621`.`staging`.`stg_yellow`
+  OPTIONS()
+  as Select VendorID AS vendor_id,
+tpep_pickup_datetime AS pickup_datetime,
+tpep_dropoff_datetime AS dropoff_datetime,
+passenger_count AS passenger_count,
+trip_distance AS trip_distance,
+RatecodeID AS ratecode_id,
+store_and_fwd_flag AS store_and_fwd_flag,
+PULocationID AS pickup_location_id,
+DOLocationID AS dropoff_location_id,
+payment_type AS payment_type,
+fare_amount AS fare_amount,
+extra AS extra,
+mta_tax AS mta_tax,
+tip_amount AS tip_amount,
+tolls_amount AS tolls_amount,
+improvement_surcharge AS improvement_surcharge,
+total_amount AS total_amount,
+congestion_surcharge AS congestion_surcharge,
+airport_fee AS airport_fee,
+'yellow' AS trip_type
+from `nyc-tlc-analytics-500621`.`raw`.`yellow_trips`;
+
+
+[0m00:40:36.527588 [debug] [Thread-1 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=nyc-tlc-analytics-500621&j=bq:US:1dbaec99-6b3f-4ae0-a150-9b7087d09d4e&page=queryresults
+[0m00:40:37.038918 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '677341a8-f299-4917-91b4-bfa34be7346e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ed54b968f80>]}
+[0m00:40:37.039763 [info ] [Thread-1 (]: 1 of 1 OK created sql view model staging.stg_yellow ............................ [[32mCREATE VIEW (0 processed)[0m in 1.29s]
+[0m00:40:37.040528 [debug] [Thread-1 (]: Finished running node model.nyc_tlc_analytics.stg_yellow
+[0m00:40:37.042161 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m00:40:37.042529 [debug] [MainThread]: Connection 'model.nyc_tlc_analytics.stg_yellow' was properly closed.
+[0m00:40:37.042903 [info ] [MainThread]: 
+[0m00:40:37.043332 [info ] [MainThread]: Finished running 1 view model in 0 hours 0 minutes and 2.04 seconds (2.04s).
+[0m00:40:37.044101 [debug] [MainThread]: Command end result
+[0m00:40:37.073137 [info ] [MainThread]: 
+[0m00:40:37.073784 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m00:40:37.074210 [info ] [MainThread]: 
+[0m00:40:37.074681 [info ] [MainThread]: Done. PASS=1 WARN=0 ERROR=0 SKIP=0 TOTAL=1
+[0m00:40:37.076429 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 20.16942, "process_user_time": 4.2261, "process_kernel_time": 0.676535, "process_mem_max_rss": "233440", "process_in_blocks": "275896", "process_out_blocks": "3000"}
+[0m00:40:37.077092 [debug] [MainThread]: Command `dbt run` succeeded at 00:40:37.076982 after 20.17 seconds
+[0m00:40:37.077514 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ed54b49b770>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ed54b38aa80>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ed538587110>]}
+[0m00:40:37.077915 [debug] [MainThread]: Flushing usage events

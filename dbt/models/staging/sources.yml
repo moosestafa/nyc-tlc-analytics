@@ -1,0 +1,7 @@
+version: 2
+sources: 
+  - name: raw
+    database: nyc-tlc-analytics-500621
+    schema: raw
+    tables: 
+    - name: yellow_trips

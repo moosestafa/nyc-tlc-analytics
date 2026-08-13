@@ -18,4 +18,4 @@ total_amount AS total_amount,
 congestion_surcharge AS congestion_surcharge,
 airport_fee AS airport_fee,
 'yellow' AS trip_type
-from {{source('raw','yellow_trips')}}
+from `nyc-tlc-analytics-500621`.`raw`.`yellow_trips`

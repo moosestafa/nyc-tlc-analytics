@@ -14,5 +14,6 @@
         "googlecloudtools.cloudcode"
       ]
     }
-  }
+  },
+  "postStartCommand": "bash scripts/setup_dbt_auth.sh"
 }
