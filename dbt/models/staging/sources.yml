@@ -5,3 +5,6 @@ sources:
     schema: raw
     tables: 
     - name: yellow_trips
+    - name: green_trips
+    - name: fhv_trips
+    - name: fhvhv_trips 

@@ -20,4 +20,4 @@ payment_type AS payment_type,
 trip_type AS pickup_type,
 congestion_surcharge AS congestion_surcharge,
 'green' AS trip_type
-from {{source('raw','green_trips')}}
+from `nyc-tlc-analytics-500621`.`raw`.`green_trips`

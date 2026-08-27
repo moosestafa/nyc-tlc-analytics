@@ -8,5 +8,8 @@ model-paths: ["models"]
 
 models:
   nyc_tlc_analytics:
-      staging: 
-        +materialized: view
+    staging:
+      +materialized: view
+    marts:
+      +materialized: table
+      +schema: marts

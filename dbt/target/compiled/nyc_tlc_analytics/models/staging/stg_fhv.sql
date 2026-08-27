@@ -10,4 +10,4 @@ SELECT
     SR_Flag AS sr_flag,
     Affiliated_base_number AS affiliated_base_number,
     'fhv' AS trip_type
-FROM {{ source('raw', 'fhv_trips') }}
+FROM `nyc-tlc-analytics-500621`.`raw`.`fhv_trips`

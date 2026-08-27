@@ -240,3 +240,561 @@ from `nyc-tlc-analytics-500621`.`raw`.`yellow_trips`;
 [0m00:40:37.077092 [debug] [MainThread]: Command `dbt run` succeeded at 00:40:37.076982 after 20.17 seconds
 [0m00:40:37.077514 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ed54b49b770>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ed54b38aa80>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ed538587110>]}
 [0m00:40:37.077915 [debug] [MainThread]: Flushing usage events
+[0m16:33:47.082302 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x740b76fc0530>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x740b7867ebd0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x740b76b17dd0>]}
+
+
+============================== 16:33:47.186425 | 0ba7ab10-9662-414c-a591-8a92b68ef17e ==============================
+[0m16:33:47.186425 [info ] [MainThread]: Running with dbt=1.8.0
+[0m16:33:47.187099 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'fail_fast': 'False', 'version_check': 'True', 'log_path': '/workspaces/nyc-tlc-analytics/dbt/logs', 'debug': 'False', 'profiles_dir': '/home/vscode/.dbt', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'log_format': 'default', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'target_path': 'None', 'invocation_command': 'dbt run --select stg_green', 'send_anonymous_usage_stats': 'True'}
+[0m16:34:00.979482 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '0ba7ab10-9662-414c-a591-8a92b68ef17e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x740b76760b60>]}
+[0m16:34:01.033269 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '0ba7ab10-9662-414c-a591-8a92b68ef17e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x740b7814e0c0>]}
+[0m16:34:01.034023 [info ] [MainThread]: Registered adapter: bigquery=1.8.0
+[0m16:34:01.302324 [debug] [MainThread]: checksum: dbb12d416fdb55e3665e4828703bbedf40c5c90ed7ca6ff39bbbfb29b12b0a92, vars: {}, profile: , target: , version: 1.8.0
+[0m16:34:01.513100 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 2 files changed.
+[0m16:34:01.514001 [debug] [MainThread]: Partial parsing: updated file: nyc_tlc_analytics://models/staging/sources.yml
+[0m16:34:01.514486 [debug] [MainThread]: Partial parsing: updated file: nyc_tlc_analytics://models/staging/stg_green.sql
+[0m16:34:01.889714 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '0ba7ab10-9662-414c-a591-8a92b68ef17e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x740b5ff38440>]}
+[0m16:34:02.148332 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '0ba7ab10-9662-414c-a591-8a92b68ef17e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x740b5fff6240>]}
+[0m16:34:02.148931 [info ] [MainThread]: Found 10 models, 2 sources, 484 macros
+[0m16:34:02.152164 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '0ba7ab10-9662-414c-a591-8a92b68ef17e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x740b5fa76c90>]}
+[0m16:34:02.155393 [info ] [MainThread]: 
+[0m16:34:02.156226 [debug] [MainThread]: Acquiring new bigquery connection 'master'
+[0m16:34:02.157393 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_nyc-tlc-analytics-500621'
+[0m16:34:02.158145 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m16:34:02.568217 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_nyc-tlc-analytics-500621, now list_nyc-tlc-analytics-500621_staging)
+[0m16:34:02.568824 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m16:34:02.955371 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '0ba7ab10-9662-414c-a591-8a92b68ef17e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x740b5fa4f8c0>]}
+[0m16:34:02.956111 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m16:34:02.956541 [info ] [MainThread]: 
+[0m16:34:02.966491 [debug] [Thread-1 (]: Began running node model.nyc_tlc_analytics.stg_green
+[0m16:34:02.967148 [info ] [Thread-1 (]: 1 of 1 START sql view model staging.stg_green .................................. [RUN]
+[0m16:34:02.967706 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_nyc-tlc-analytics-500621_staging, now model.nyc_tlc_analytics.stg_green)
+[0m16:34:02.968140 [debug] [Thread-1 (]: Began compiling node model.nyc_tlc_analytics.stg_green
+[0m16:34:02.976249 [debug] [Thread-1 (]: Writing injected SQL for node "model.nyc_tlc_analytics.stg_green"
+[0m16:34:02.979448 [debug] [Thread-1 (]: Began executing node model.nyc_tlc_analytics.stg_green
+[0m16:34:03.013302 [debug] [Thread-1 (]: Writing runtime sql for node "model.nyc_tlc_analytics.stg_green"
+[0m16:34:03.014051 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m16:34:03.063729 [debug] [Thread-1 (]: On model.nyc_tlc_analytics.stg_green: /* {"app": "dbt", "dbt_version": "1.8.0", "profile_name": "nyc_tlc_analytics", "target_name": "dev", "node_id": "model.nyc_tlc_analytics.stg_green"} */
+
+
+  create or replace view `nyc-tlc-analytics-500621`.`staging`.`stg_green`
+  OPTIONS()
+  as SELECT 
+VendorID AS vendor_id,
+lpep_pickup_datetime AS pickup_datetime,
+lpep_dropoff_datetime AS dropoff_datetime,
+store_and_fwd_flag AS store_and_fwd_flag,
+RatecodeID AS ratecode_id,
+PULocationID AS pickup_location_id,
+DOLocationID AS dropoff_location_id,
+passenger_count AS passenger_count,
+trip_distance AS trip_distance,
+fare_amount AS fare_amount,
+extra AS extra,
+mta_tax AS mta_tax,
+tip_amount AS tip_amount,
+tolls_amount AS tolls_amount,
+ehail_fee AS ehail_fee,
+improvement_surcharge AS improvement_surcharge,
+total_amount AS total_amount,
+payment_type AS payment_type,
+trip_type AS pickup_type,
+congestion_surcharge AS congestion_surcharge,
+'green' AS trip_type
+from `nyc-tlc-analytics-500621`.`raw`.`green_trips`;
+
+
+[0m16:34:03.659768 [debug] [Thread-1 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=nyc-tlc-analytics-500621&j=bq:US:c0394db7-55f3-43f8-bb04-eb88bf1c94d0&page=queryresults
+[0m16:34:04.192099 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '0ba7ab10-9662-414c-a591-8a92b68ef17e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x740b640cc9e0>]}
+[0m16:34:04.192896 [info ] [Thread-1 (]: 1 of 1 OK created sql view model staging.stg_green ............................. [[32mCREATE VIEW (0 processed)[0m in 1.22s]
+[0m16:34:04.193683 [debug] [Thread-1 (]: Finished running node model.nyc_tlc_analytics.stg_green
+[0m16:34:04.195315 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m16:34:04.195681 [debug] [MainThread]: Connection 'model.nyc_tlc_analytics.stg_green' was properly closed.
+[0m16:34:04.196074 [info ] [MainThread]: 
+[0m16:34:04.196503 [info ] [MainThread]: Finished running 1 view model in 0 hours 0 minutes and 2.04 seconds (2.04s).
+[0m16:34:04.197264 [debug] [MainThread]: Command end result
+[0m16:34:04.225852 [info ] [MainThread]: 
+[0m16:34:04.226438 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m16:34:04.226858 [info ] [MainThread]: 
+[0m16:34:04.227323 [info ] [MainThread]: Done. PASS=1 WARN=0 ERROR=0 SKIP=0 TOTAL=1
+[0m16:34:04.228681 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 17.197983, "process_user_time": 3.739655, "process_kernel_time": 0.664738, "process_mem_max_rss": "234628", "process_in_blocks": "281112", "process_out_blocks": "3032"}
+[0m16:34:04.229327 [debug] [MainThread]: Command `dbt run` succeeded at 16:34:04.229217 after 17.20 seconds
+[0m16:34:04.229811 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x740b7a853080>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x740b64a3efc0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x740b641e41a0>]}
+[0m16:34:04.230295 [debug] [MainThread]: Flushing usage events
+[0m18:56:34.716958 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x78168ab951f0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x78168a2f3dd0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x78168aa60b30>]}
+
+
+============================== 18:56:34.930453 | 3bbe50d7-8f4f-4d35-a147-f0fa666314a6 ==============================
+[0m18:56:34.930453 [info ] [MainThread]: Running with dbt=1.8.0
+[0m18:56:34.931310 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'debug': 'False', 'profiles_dir': '/home/vscode/.dbt', 'log_path': '/workspaces/nyc-tlc-analytics/dbt/logs', 'version_check': 'True', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'invocation_command': 'dbt run --select stg_green', 'static_parser': 'True', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m18:56:51.702903 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '3bbe50d7-8f4f-4d35-a147-f0fa666314a6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x781678fb7440>]}
+[0m18:56:51.757680 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '3bbe50d7-8f4f-4d35-a147-f0fa666314a6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x781678f0f620>]}
+[0m18:56:51.758471 [info ] [MainThread]: Registered adapter: bigquery=1.8.0
+[0m18:56:52.032706 [debug] [MainThread]: checksum: dbb12d416fdb55e3665e4828703bbedf40c5c90ed7ca6ff39bbbfb29b12b0a92, vars: {}, profile: , target: , version: 1.8.0
+[0m18:56:52.370986 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m18:56:52.371578 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m18:56:52.402389 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '3bbe50d7-8f4f-4d35-a147-f0fa666314a6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x781673f9b230>]}
+[0m18:56:52.491872 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '3bbe50d7-8f4f-4d35-a147-f0fa666314a6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x781673d7bf80>]}
+[0m18:56:52.492458 [info ] [MainThread]: Found 10 models, 2 sources, 484 macros
+[0m18:56:52.492925 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '3bbe50d7-8f4f-4d35-a147-f0fa666314a6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x781673dd9430>]}
+[0m18:56:52.494529 [info ] [MainThread]: 
+[0m18:56:52.495237 [debug] [MainThread]: Acquiring new bigquery connection 'master'
+[0m18:56:52.496275 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_nyc-tlc-analytics-500621'
+[0m18:56:52.496879 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m18:56:52.842556 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_nyc-tlc-analytics-500621, now list_nyc-tlc-analytics-500621_staging)
+[0m18:56:52.843212 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m18:56:53.163987 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '3bbe50d7-8f4f-4d35-a147-f0fa666314a6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x781673b727e0>]}
+[0m18:56:53.164665 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m18:56:53.165110 [info ] [MainThread]: 
+[0m18:56:53.176512 [debug] [Thread-1 (]: Began running node model.nyc_tlc_analytics.stg_green
+[0m18:56:53.177131 [info ] [Thread-1 (]: 1 of 1 START sql view model staging.stg_green .................................. [RUN]
+[0m18:56:53.177621 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_nyc-tlc-analytics-500621_staging, now model.nyc_tlc_analytics.stg_green)
+[0m18:56:53.178048 [debug] [Thread-1 (]: Began compiling node model.nyc_tlc_analytics.stg_green
+[0m18:56:53.187905 [debug] [Thread-1 (]: Writing injected SQL for node "model.nyc_tlc_analytics.stg_green"
+[0m18:56:53.188630 [debug] [Thread-1 (]: Began executing node model.nyc_tlc_analytics.stg_green
+[0m18:56:53.218427 [debug] [Thread-1 (]: Writing runtime sql for node "model.nyc_tlc_analytics.stg_green"
+[0m18:56:53.219213 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m18:56:53.268143 [debug] [Thread-1 (]: On model.nyc_tlc_analytics.stg_green: /* {"app": "dbt", "dbt_version": "1.8.0", "profile_name": "nyc_tlc_analytics", "target_name": "dev", "node_id": "model.nyc_tlc_analytics.stg_green"} */
+
+
+  create or replace view `nyc-tlc-analytics-500621`.`staging`.`stg_green`
+  OPTIONS()
+  as SELECT 
+VendorID AS vendor_id,
+lpep_pickup_datetime AS pickup_datetime,
+lpep_dropoff_datetime AS dropoff_datetime,
+store_and_fwd_flag AS store_and_fwd_flag,
+RatecodeID AS ratecode_id,
+PULocationID AS pickup_location_id,
+DOLocationID AS dropoff_location_id,
+passenger_count AS passenger_count,
+trip_distance AS trip_distance,
+fare_amount AS fare_amount,
+extra AS extra,
+mta_tax AS mta_tax,
+tip_amount AS tip_amount,
+tolls_amount AS tolls_amount,
+ehail_fee AS ehail_fee,
+improvement_surcharge AS improvement_surcharge,
+total_amount AS total_amount,
+payment_type AS payment_type,
+trip_type AS pickup_type,
+congestion_surcharge AS congestion_surcharge,
+'green' AS trip_type
+from `nyc-tlc-analytics-500621`.`raw`.`green_trips`;
+
+
+[0m18:56:53.901848 [debug] [Thread-1 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=nyc-tlc-analytics-500621&j=bq:US:9d355849-fe75-4595-bb7d-1a554894b1b0&page=queryresults
+[0m18:56:54.379619 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '3bbe50d7-8f4f-4d35-a147-f0fa666314a6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x781678888b60>]}
+[0m18:56:54.380407 [info ] [Thread-1 (]: 1 of 1 OK created sql view model staging.stg_green ............................. [[32mCREATE VIEW (0 processed)[0m in 1.20s]
+[0m18:56:54.381147 [debug] [Thread-1 (]: Finished running node model.nyc_tlc_analytics.stg_green
+[0m18:56:54.382683 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m18:56:54.383065 [debug] [MainThread]: Connection 'model.nyc_tlc_analytics.stg_green' was properly closed.
+[0m18:56:54.383424 [info ] [MainThread]: 
+[0m18:56:54.383861 [info ] [MainThread]: Finished running 1 view model in 0 hours 0 minutes and 1.89 seconds (1.89s).
+[0m18:56:54.384606 [debug] [MainThread]: Command end result
+[0m18:56:54.414813 [info ] [MainThread]: 
+[0m18:56:54.415443 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m18:56:54.415901 [info ] [MainThread]: 
+[0m18:56:54.416357 [info ] [MainThread]: Done. PASS=1 WARN=0 ERROR=0 SKIP=0 TOTAL=1
+[0m18:56:54.418006 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 19.775238, "process_user_time": 3.228289, "process_kernel_time": 0.672686, "process_mem_max_rss": "231288", "process_in_blocks": "275624", "process_out_blocks": "2040"}
+[0m18:56:54.418630 [debug] [MainThread]: Command `dbt run` succeeded at 18:56:54.418514 after 19.78 seconds
+[0m18:56:54.419169 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x78168a4b4ce0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x78168a0ee960>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x78168a0ed790>]}
+[0m18:56:54.419566 [debug] [MainThread]: Flushing usage events
+[0m16:53:29.329498 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b32ee84a2a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b32ed695730>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b32ed603980>]}
+
+
+============================== 16:53:29.482343 | 4f88fbc3-99a9-409f-847c-8d140fa723f6 ==============================
+[0m16:53:29.482343 [info ] [MainThread]: Running with dbt=1.8.0
+[0m16:53:29.483134 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/home/vscode/.dbt', 'version_check': 'True', 'fail_fast': 'False', 'log_path': '/workspaces/nyc-tlc-analytics/dbt/logs', 'debug': 'False', 'warn_error': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'invocation_command': 'dbt run --select stg_fhv', 'log_format': 'default', 'target_path': 'None', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m16:53:42.995995 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '4f88fbc3-99a9-409f-847c-8d140fa723f6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b32ed6948c0>]}
+[0m16:53:43.051074 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '4f88fbc3-99a9-409f-847c-8d140fa723f6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b32d6f45be0>]}
+[0m16:53:43.051912 [info ] [MainThread]: Registered adapter: bigquery=1.8.0
+[0m16:53:43.327969 [debug] [MainThread]: checksum: dbb12d416fdb55e3665e4828703bbedf40c5c90ed7ca6ff39bbbfb29b12b0a92, vars: {}, profile: , target: , version: 1.8.0
+[0m16:53:43.588499 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 2 files changed.
+[0m16:53:43.589656 [debug] [MainThread]: Partial parsing: updated file: nyc_tlc_analytics://models/staging/sources.yml
+[0m16:53:43.590141 [debug] [MainThread]: Partial parsing: updated file: nyc_tlc_analytics://models/staging/stg_fhv.sql
+[0m16:53:43.885385 [error] [MainThread]: Encountered an error:
+Compilation Error
+  Model 'model.nyc_tlc_analytics.stg_fhv' (models/staging/stg_fhv.sql) depends on a source named 'raw.fhv_trips' which was not found
+[0m16:53:43.888104 [debug] [MainThread]: Resource report: {"command_name": "run", "command_wall_clock_time": 14.655396, "process_user_time": 3.111507, "process_kernel_time": 0.607513, "process_mem_max_rss": "229332", "process_in_blocks": "259632", "process_out_blocks": "24", "command_success": false}
+[0m16:53:43.888748 [debug] [MainThread]: Command `dbt run` failed at 16:53:43.888599 after 14.66 seconds
+[0m16:53:43.889196 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b32ed603980>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b32ee7ba060>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7b32d6b9d3d0>]}
+[0m16:53:43.889615 [debug] [MainThread]: Flushing usage events
+[0m17:16:39.584104 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x773ac2b51160>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x773ac2d5a7e0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x773ac31f2d20>]}
+
+
+============================== 17:16:39.591908 | f0c3b436-0be7-4784-b870-910b31fa87c9 ==============================
+[0m17:16:39.591908 [info ] [MainThread]: Running with dbt=1.8.0
+[0m17:16:39.592574 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/home/vscode/.dbt', 'fail_fast': 'False', 'warn_error': 'None', 'log_path': '/workspaces/nyc-tlc-analytics/dbt/logs', 'debug': 'False', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'introspect': 'True', 'invocation_command': 'dbt run --select fhv_trips', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m17:16:40.784226 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'f0c3b436-0be7-4784-b870-910b31fa87c9', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x773ac3b98800>]}
+[0m17:16:40.865120 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'f0c3b436-0be7-4784-b870-910b31fa87c9', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x773ac47388f0>]}
+[0m17:16:40.866163 [info ] [MainThread]: Registered adapter: bigquery=1.8.0
+[0m17:16:41.159026 [debug] [MainThread]: checksum: dbb12d416fdb55e3665e4828703bbedf40c5c90ed7ca6ff39bbbfb29b12b0a92, vars: {}, profile: , target: , version: 1.8.0
+[0m17:16:41.361429 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 2 files changed.
+[0m17:16:41.362353 [debug] [MainThread]: Partial parsing: updated file: nyc_tlc_analytics://models/staging/sources.yml
+[0m17:16:41.362843 [debug] [MainThread]: Partial parsing: updated file: nyc_tlc_analytics://models/staging/stg_fhv.sql
+[0m17:16:41.844924 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'f0c3b436-0be7-4784-b870-910b31fa87c9', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x773ab042ea20>]}
+[0m17:16:42.065262 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'f0c3b436-0be7-4784-b870-910b31fa87c9', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x773ab00de000>]}
+[0m17:16:42.065879 [info ] [MainThread]: Found 10 models, 3 sources, 484 macros
+[0m17:16:42.066311 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'f0c3b436-0be7-4784-b870-910b31fa87c9', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x773ab062d460>]}
+[0m17:16:42.067003 [warn ] [MainThread]: The selection criterion 'fhv_trips' does not match any enabled nodes
+[0m17:16:42.068390 [info ] [MainThread]: 
+[0m17:16:42.068861 [warn ] [MainThread]: Nothing to do. Try checking your model configs and model specification args
+[0m17:16:42.069467 [debug] [MainThread]: Command end result
+[0m17:16:42.098493 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 2.564523, "process_user_time": 3.525082, "process_kernel_time": 0.529506, "process_mem_max_rss": "231416", "process_in_blocks": "3672", "process_out_blocks": "3000"}
+[0m17:16:42.099234 [debug] [MainThread]: Command `dbt run` succeeded at 17:16:42.099119 after 2.57 seconds
+[0m17:16:42.099705 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x773ac6cfb080>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x773ac46dd700>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x773ab0414ef0>]}
+[0m17:16:42.100147 [debug] [MainThread]: Flushing usage events
+[0m17:16:53.601976 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x78f01aac5280>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x78f01df5e6f0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x78f01b334680>]}
+
+
+============================== 17:16:53.612504 | 87d58f09-6324-4fb9-a34e-e377bfba1176 ==============================
+[0m17:16:53.612504 [info ] [MainThread]: Running with dbt=1.8.0
+[0m17:16:53.613300 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'fail_fast': 'False', 'profiles_dir': '/home/vscode/.dbt', 'log_path': '/workspaces/nyc-tlc-analytics/dbt/logs', 'debug': 'False', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'invocation_command': 'dbt run --select stg_fhv', 'introspect': 'True', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m17:16:54.937085 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '87d58f09-6324-4fb9-a34e-e377bfba1176', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x78f00afef380>]}
+[0m17:16:54.993944 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '87d58f09-6324-4fb9-a34e-e377bfba1176', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x78f01ba8c6b0>]}
+[0m17:16:54.994857 [info ] [MainThread]: Registered adapter: bigquery=1.8.0
+[0m17:16:55.232249 [debug] [MainThread]: checksum: dbb12d416fdb55e3665e4828703bbedf40c5c90ed7ca6ff39bbbfb29b12b0a92, vars: {}, profile: , target: , version: 1.8.0
+[0m17:16:55.422283 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m17:16:55.422867 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m17:16:55.454991 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '87d58f09-6324-4fb9-a34e-e377bfba1176', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x78f0088bb0b0>]}
+[0m17:16:55.537495 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '87d58f09-6324-4fb9-a34e-e377bfba1176', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x78f008630950>]}
+[0m17:16:55.538133 [info ] [MainThread]: Found 10 models, 3 sources, 484 macros
+[0m17:16:55.538567 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '87d58f09-6324-4fb9-a34e-e377bfba1176', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x78f008422db0>]}
+[0m17:16:55.540195 [info ] [MainThread]: 
+[0m17:16:55.540900 [debug] [MainThread]: Acquiring new bigquery connection 'master'
+[0m17:16:55.541939 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_nyc-tlc-analytics-500621'
+[0m17:16:55.542550 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m17:16:55.924405 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_nyc-tlc-analytics-500621, now list_nyc-tlc-analytics-500621_staging)
+[0m17:16:55.925140 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m17:16:56.396809 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '87d58f09-6324-4fb9-a34e-e377bfba1176', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x78f0087a31a0>]}
+[0m17:16:56.397579 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m17:16:56.398025 [info ] [MainThread]: 
+[0m17:16:56.412510 [debug] [Thread-1 (]: Began running node model.nyc_tlc_analytics.stg_fhv
+[0m17:16:56.413430 [info ] [Thread-1 (]: 1 of 1 START sql view model staging.stg_fhv .................................... [RUN]
+[0m17:16:56.414319 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_nyc-tlc-analytics-500621_staging, now model.nyc_tlc_analytics.stg_fhv)
+[0m17:16:56.414905 [debug] [Thread-1 (]: Began compiling node model.nyc_tlc_analytics.stg_fhv
+[0m17:16:56.428635 [debug] [Thread-1 (]: Writing injected SQL for node "model.nyc_tlc_analytics.stg_fhv"
+[0m17:16:56.429911 [debug] [Thread-1 (]: Began executing node model.nyc_tlc_analytics.stg_fhv
+[0m17:16:56.485393 [debug] [Thread-1 (]: Writing runtime sql for node "model.nyc_tlc_analytics.stg_fhv"
+[0m17:16:56.486507 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m17:16:56.535259 [debug] [Thread-1 (]: On model.nyc_tlc_analytics.stg_fhv: /* {"app": "dbt", "dbt_version": "1.8.0", "profile_name": "nyc_tlc_analytics", "target_name": "dev", "node_id": "model.nyc_tlc_analytics.stg_fhv"} */
+
+
+  create or replace view `nyc-tlc-analytics-500621`.`staging`.`stg_fhv`
+  OPTIONS()
+  as SELECT
+    dispatching_base_num AS dispatching_base_num,
+    pickup_datetime AS pickup_datetime,
+    CASE 
+        WHEN DATE(dropOff_datetime) = '1989-01-01' THEN NULL
+        ELSE dropOff_datetime
+    END AS dropoff_datetime,
+    PUlocationID AS pickup_location_id,
+    DOlocationID AS dropoff_location_id,
+    SR_Flag AS sr_flag,
+    Affiliated_base_number AS affiliated_base_number,
+    'fhv' AS trip_type
+FROM `nyc-tlc-analytics-500621`.`raw`.`fhv_trips`;
+
+
+[0m17:16:57.190635 [debug] [Thread-1 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=nyc-tlc-analytics-500621&j=bq:US:6333db56-28e8-40af-bebc-68172d8a3fb1&page=queryresults
+[0m17:16:57.672955 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '87d58f09-6324-4fb9-a34e-e377bfba1176', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x78f00903c830>]}
+[0m17:16:57.673757 [info ] [Thread-1 (]: 1 of 1 OK created sql view model staging.stg_fhv ............................... [[32mCREATE VIEW (0 processed)[0m in 1.26s]
+[0m17:16:57.674480 [debug] [Thread-1 (]: Finished running node model.nyc_tlc_analytics.stg_fhv
+[0m17:16:57.676108 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m17:16:57.676459 [debug] [MainThread]: Connection 'model.nyc_tlc_analytics.stg_fhv' was properly closed.
+[0m17:16:57.676836 [info ] [MainThread]: 
+[0m17:16:57.677247 [info ] [MainThread]: Finished running 1 view model in 0 hours 0 minutes and 2.14 seconds (2.14s).
+[0m17:16:57.678042 [debug] [MainThread]: Command end result
+[0m17:16:57.707031 [info ] [MainThread]: 
+[0m17:16:57.707625 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m17:16:57.708075 [info ] [MainThread]: 
+[0m17:16:57.708521 [info ] [MainThread]: Done. PASS=1 WARN=0 ERROR=0 SKIP=0 TOTAL=1
+[0m17:16:57.709500 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 4.1724596, "process_user_time": 3.224225, "process_kernel_time": 0.520422, "process_mem_max_rss": "232020", "process_in_blocks": "32656", "process_out_blocks": "2024"}
+[0m17:16:57.710052 [debug] [MainThread]: Command `dbt run` succeeded at 17:16:57.709945 after 4.17 seconds
+[0m17:16:57.710454 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x78f01b718710>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x78f01b200890>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x78f00b7bc230>]}
+[0m17:16:57.710869 [debug] [MainThread]: Flushing usage events
+[0m18:17:45.411214 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x78140f0bfc50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x78140f4c93a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7814111ceb10>]}
+
+
+============================== 18:17:45.565280 | c3a96b36-a6d4-4977-9b29-fdce42ee79e0 ==============================
+[0m18:17:45.565280 [info ] [MainThread]: Running with dbt=1.8.0
+[0m18:17:45.566010 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'debug': 'False', 'version_check': 'True', 'log_path': '/workspaces/nyc-tlc-analytics/dbt/logs', 'fail_fast': 'False', 'profiles_dir': '/home/vscode/.dbt', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'log_format': 'default', 'static_parser': 'True', 'target_path': 'None', 'invocation_command': 'dbt run --select stg_fhvhv', 'send_anonymous_usage_stats': 'True'}
+[0m18:17:58.860385 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'c3a96b36-a6d4-4977-9b29-fdce42ee79e0', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x78140f107c20>]}
+[0m18:17:58.916744 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'c3a96b36-a6d4-4977-9b29-fdce42ee79e0', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7814100c86e0>]}
+[0m18:17:58.917544 [info ] [MainThread]: Registered adapter: bigquery=1.8.0
+[0m18:17:59.189185 [debug] [MainThread]: checksum: dbb12d416fdb55e3665e4828703bbedf40c5c90ed7ca6ff39bbbfb29b12b0a92, vars: {}, profile: , target: , version: 1.8.0
+[0m18:17:59.441517 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 1 files added, 1 files changed.
+[0m18:17:59.442709 [debug] [MainThread]: Partial parsing: added file: nyc_tlc_analytics://models/staging/stg_fhvhv.sql
+[0m18:17:59.443402 [debug] [MainThread]: Partial parsing: updated file: nyc_tlc_analytics://models/staging/sources.yml
+[0m18:17:59.826392 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'c3a96b36-a6d4-4977-9b29-fdce42ee79e0', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7813fc3d6f30>]}
+[0m18:18:00.028298 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'c3a96b36-a6d4-4977-9b29-fdce42ee79e0', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7813fcb8dd30>]}
+[0m18:18:00.028938 [info ] [MainThread]: Found 11 models, 4 sources, 484 macros
+[0m18:18:00.029351 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'c3a96b36-a6d4-4977-9b29-fdce42ee79e0', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7813fc986570>]}
+[0m18:18:00.031272 [info ] [MainThread]: 
+[0m18:18:00.032023 [debug] [MainThread]: Acquiring new bigquery connection 'master'
+[0m18:18:00.033075 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_nyc-tlc-analytics-500621'
+[0m18:18:00.033577 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m18:18:00.486697 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_nyc-tlc-analytics-500621, now list_nyc-tlc-analytics-500621_staging)
+[0m18:18:00.487634 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m18:18:00.844446 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'c3a96b36-a6d4-4977-9b29-fdce42ee79e0', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7813fc420f50>]}
+[0m18:18:00.845174 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m18:18:00.845611 [info ] [MainThread]: 
+[0m18:18:00.856365 [debug] [Thread-1 (]: Began running node model.nyc_tlc_analytics.stg_fhvhv
+[0m18:18:00.857022 [info ] [Thread-1 (]: 1 of 1 START sql view model staging.stg_fhvhv .................................. [RUN]
+[0m18:18:00.857605 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_nyc-tlc-analytics-500621_staging, now model.nyc_tlc_analytics.stg_fhvhv)
+[0m18:18:00.858024 [debug] [Thread-1 (]: Began compiling node model.nyc_tlc_analytics.stg_fhvhv
+[0m18:18:00.868185 [debug] [Thread-1 (]: Writing injected SQL for node "model.nyc_tlc_analytics.stg_fhvhv"
+[0m18:18:00.868885 [debug] [Thread-1 (]: Began executing node model.nyc_tlc_analytics.stg_fhvhv
+[0m18:18:00.900765 [debug] [Thread-1 (]: Writing runtime sql for node "model.nyc_tlc_analytics.stg_fhvhv"
+[0m18:18:00.901516 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m18:18:00.951302 [debug] [Thread-1 (]: On model.nyc_tlc_analytics.stg_fhvhv: /* {"app": "dbt", "dbt_version": "1.8.0", "profile_name": "nyc_tlc_analytics", "target_name": "dev", "node_id": "model.nyc_tlc_analytics.stg_fhvhv"} */
+
+
+  create or replace view `nyc-tlc-analytics-500621`.`staging`.`stg_fhvhv`
+  OPTIONS()
+  as SELECT
+    hvfhs_license_num AS hvfhs_license_num,
+    dispatching_base_num AS dispatching_base_num,
+    originating_base_num AS originating_base_num,
+    request_datetime AS request_datetime,
+    on_scene_datetime AS on_scene_datetime,
+    pickup_datetime AS pickup_datetime,
+    dropoff_datetime AS dropoff_datetime,
+    PULocationID AS pickup_location_id,
+    DOLocationID AS dropoff_location_id,
+    trip_miles AS trip_distance,
+    trip_time AS trip_time,
+    base_passenger_fare AS base_passenger_fare,
+    tolls AS tolls,
+    bcf AS bcf,
+    sales_tax AS sales_tax,
+    congestion_surcharge AS congestion_surcharge,
+    airport_fee AS airport_fee,
+    tips AS tip_amount,
+    driver_pay AS driver_pay,
+    shared_request_flag AS shared_request_flag,
+    shared_match_flag AS shared_match_flag,
+    access_a_ride_flag AS access_a_ride_flag,
+    wav_request_flag AS wav_request_flag,
+    wav_match_flag AS wav_match_flag,
+    'fhvhv' AS trip_type
+FROM `nyc-tlc-analytics-500621`.`raw`.`fhvhv_trips`;
+
+
+[0m18:18:01.801355 [debug] [Thread-1 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=nyc-tlc-analytics-500621&j=bq:US:3cb50dad-a710-4bd8-9ffa-7a8f461dddd8&page=queryresults
+[0m18:18:02.327668 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'c3a96b36-a6d4-4977-9b29-fdce42ee79e0', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7813fc903aa0>]}
+[0m18:18:02.328669 [info ] [Thread-1 (]: 1 of 1 OK created sql view model staging.stg_fhvhv ............................. [[32mCREATE VIEW (0 processed)[0m in 1.47s]
+[0m18:18:02.330128 [debug] [Thread-1 (]: Finished running node model.nyc_tlc_analytics.stg_fhvhv
+[0m18:18:02.332285 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m18:18:02.332888 [debug] [MainThread]: Connection 'model.nyc_tlc_analytics.stg_fhvhv' was properly closed.
+[0m18:18:02.333489 [info ] [MainThread]: 
+[0m18:18:02.334389 [info ] [MainThread]: Finished running 1 view model in 0 hours 0 minutes and 2.30 seconds (2.30s).
+[0m18:18:02.335600 [debug] [MainThread]: Command end result
+[0m18:18:02.373254 [info ] [MainThread]: 
+[0m18:18:02.374407 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m18:18:02.375168 [info ] [MainThread]: 
+[0m18:18:02.375711 [info ] [MainThread]: Done. PASS=1 WARN=0 ERROR=0 SKIP=0 TOTAL=1
+[0m18:18:02.389620 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 17.049967, "process_user_time": 3.815528, "process_kernel_time": 0.669585, "process_mem_max_rss": "234400", "process_in_blocks": "268648", "process_out_blocks": "3048"}
+[0m18:18:02.390207 [debug] [MainThread]: Command `dbt run` succeeded at 18:18:02.390097 after 17.05 seconds
+[0m18:18:02.390643 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7813fc9870e0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7813fca65b20>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7813fca65be0>]}
+[0m18:18:02.391062 [debug] [MainThread]: Flushing usage events
+[0m03:52:54.918905 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x77e9cc939040>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x77e9cb01f8f0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x77e9cac19c40>]}
+
+
+============================== 03:52:55.100797 | b81d6f79-4095-432a-8db7-f40f6c9ea51a ==============================
+[0m03:52:55.100797 [info ] [MainThread]: Running with dbt=1.8.0
+[0m03:52:55.101775 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/home/vscode/.dbt', 'debug': 'False', 'warn_error': 'None', 'log_path': '/workspaces/nyc-tlc-analytics/dbt/logs', 'fail_fast': 'False', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'log_format': 'default', 'introspect': 'True', 'invocation_command': 'dbt seed', 'static_parser': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'True'}
+[0m03:53:14.483494 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'b81d6f79-4095-432a-8db7-f40f6c9ea51a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x77e9b8ad9340>]}
+[0m03:53:14.560486 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'b81d6f79-4095-432a-8db7-f40f6c9ea51a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x77e9cc77c860>]}
+[0m03:53:14.561745 [info ] [MainThread]: Registered adapter: bigquery=1.8.0
+[0m03:53:14.969258 [debug] [MainThread]: checksum: dbb12d416fdb55e3665e4828703bbedf40c5c90ed7ca6ff39bbbfb29b12b0a92, vars: {}, profile: , target: , version: 1.8.0
+[0m03:53:15.506922 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 1 files added, 0 files changed.
+[0m03:53:15.507902 [debug] [MainThread]: Partial parsing: added file: nyc_tlc_analytics://seeds/taxi_zone_lookup.csv
+[0m03:53:15.836831 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'b81d6f79-4095-432a-8db7-f40f6c9ea51a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x77e9b84ca300>]}
+[0m03:53:15.968268 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'b81d6f79-4095-432a-8db7-f40f6c9ea51a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x77e9b870b290>]}
+[0m03:53:15.968929 [info ] [MainThread]: Found 11 models, 1 seed, 4 sources, 484 macros
+[0m03:53:15.969342 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'b81d6f79-4095-432a-8db7-f40f6c9ea51a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x77e9b87c2720>]}
+[0m03:53:15.971396 [info ] [MainThread]: 
+[0m03:53:15.972125 [debug] [MainThread]: Acquiring new bigquery connection 'master'
+[0m03:53:15.973142 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_nyc-tlc-analytics-500621'
+[0m03:53:15.973636 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m03:53:16.322770 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_nyc-tlc-analytics-500621, now list_nyc-tlc-analytics-500621_staging)
+[0m03:53:16.323368 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m03:53:16.674085 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'b81d6f79-4095-432a-8db7-f40f6c9ea51a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x77e9b8914dd0>]}
+[0m03:53:16.674786 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m03:53:16.675209 [info ] [MainThread]: 
+[0m03:53:16.686816 [debug] [Thread-1 (]: Began running node seed.nyc_tlc_analytics.taxi_zone_lookup
+[0m03:53:16.687432 [info ] [Thread-1 (]: 1 of 1 START seed file staging.taxi_zone_lookup ................................ [RUN]
+[0m03:53:16.688072 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_nyc-tlc-analytics-500621_staging, now seed.nyc_tlc_analytics.taxi_zone_lookup)
+[0m03:53:16.688481 [debug] [Thread-1 (]: Began compiling node seed.nyc_tlc_analytics.taxi_zone_lookup
+[0m03:53:16.688903 [debug] [Thread-1 (]: Began executing node seed.nyc_tlc_analytics.taxi_zone_lookup
+[0m03:53:16.724997 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m03:53:20.719724 [debug] [Thread-1 (]: On seed.nyc_tlc_analytics.taxi_zone_lookup: /* {"app": "dbt", "dbt_version": "1.8.0", "profile_name": "nyc_tlc_analytics", "target_name": "dev", "node_id": "seed.nyc_tlc_analytics.taxi_zone_lookup"} */
+
+    alter table `nyc-tlc-analytics-500621`.`staging`.`taxi_zone_lookup` set OPTIONS()
+  
+[0m03:53:21.646816 [debug] [Thread-1 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=nyc-tlc-analytics-500621&j=bq:US:e551b489-aa97-4f49-b8a8-cfec0d568f45&page=queryresults
+[0m03:53:22.949968 [debug] [Thread-1 (]: Writing runtime SQL for node "seed.nyc_tlc_analytics.taxi_zone_lookup"
+[0m03:53:23.345494 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'b81d6f79-4095-432a-8db7-f40f6c9ea51a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x77e9b8426990>]}
+[0m03:53:23.346242 [info ] [Thread-1 (]: 1 of 1 OK loaded seed file staging.taxi_zone_lookup ............................ [[32mINSERT 265[0m in 6.66s]
+[0m03:53:23.347034 [debug] [Thread-1 (]: Finished running node seed.nyc_tlc_analytics.taxi_zone_lookup
+[0m03:53:23.348706 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m03:53:23.349053 [debug] [MainThread]: Connection 'seed.nyc_tlc_analytics.taxi_zone_lookup' was properly closed.
+[0m03:53:23.349388 [info ] [MainThread]: 
+[0m03:53:23.349779 [info ] [MainThread]: Finished running 1 seed in 0 hours 0 minutes and 7.38 seconds (7.38s).
+[0m03:53:23.350431 [debug] [MainThread]: Command end result
+[0m03:53:23.379484 [info ] [MainThread]: 
+[0m03:53:23.380086 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m03:53:23.380536 [info ] [MainThread]: 
+[0m03:53:23.380991 [info ] [MainThread]: Done. PASS=1 WARN=0 ERROR=0 SKIP=0 TOTAL=1
+[0m03:53:23.384267 [debug] [MainThread]: Resource report: {"command_name": "seed", "command_success": true, "command_wall_clock_time": 28.61939, "process_user_time": 4.317836, "process_kernel_time": 0.674755, "process_mem_max_rss": "238008", "process_in_blocks": "277736", "process_out_blocks": "3072"}
+[0m03:53:23.384826 [debug] [MainThread]: Command `dbt seed` succeeded at 03:53:23.384716 after 28.62 seconds
+[0m03:53:23.385223 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x77e9cb998b00>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x77e9cb507aa0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x77e9b9083d70>]}
+[0m03:53:23.385772 [debug] [MainThread]: Flushing usage events
+[0m04:00:23.584199 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x723fb4d8bb30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x723fb4d735f0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x723fb5786ab0>]}
+
+
+============================== 04:00:23.664842 | a12fbf26-01a7-4d3e-be74-042a4dc06d11 ==============================
+[0m04:00:23.664842 [info ] [MainThread]: Running with dbt=1.8.0
+[0m04:00:23.665700 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/home/vscode/.dbt', 'fail_fast': 'False', 'version_check': 'True', 'log_path': '/workspaces/nyc-tlc-analytics/dbt/logs', 'debug': 'False', 'warn_error': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt run --select dim_location', 'log_format': 'default', 'static_parser': 'True', 'target_path': 'None', 'introspect': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m04:00:25.010995 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'a12fbf26-01a7-4d3e-be74-042a4dc06d11', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x723fb4749340>]}
+[0m04:00:25.082852 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'a12fbf26-01a7-4d3e-be74-042a4dc06d11', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x723fb636a150>]}
+[0m04:00:25.083671 [info ] [MainThread]: Registered adapter: bigquery=1.8.0
+[0m04:00:25.318724 [debug] [MainThread]: checksum: dbb12d416fdb55e3665e4828703bbedf40c5c90ed7ca6ff39bbbfb29b12b0a92, vars: {}, profile: , target: , version: 1.8.0
+[0m04:00:25.528237 [info ] [MainThread]: Unable to do partial parsing because a project config has changed
+[0m04:00:25.528864 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': 'a12fbf26-01a7-4d3e-be74-042a4dc06d11', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x723f9e3e63f0>]}
+[0m04:00:26.853268 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'a12fbf26-01a7-4d3e-be74-042a4dc06d11', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x723f9e2dbf50>]}
+[0m04:00:26.944209 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'a12fbf26-01a7-4d3e-be74-042a4dc06d11', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x723f9dd742c0>]}
+[0m04:00:26.944806 [info ] [MainThread]: Found 11 models, 1 seed, 4 sources, 484 macros
+[0m04:00:26.945233 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'a12fbf26-01a7-4d3e-be74-042a4dc06d11', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x723f9dd91be0>]}
+[0m04:00:26.946865 [info ] [MainThread]: 
+[0m04:00:26.947573 [debug] [MainThread]: Acquiring new bigquery connection 'master'
+[0m04:00:26.948569 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_nyc-tlc-analytics-500621'
+[0m04:00:26.949031 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m04:00:27.309866 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_nyc-tlc-analytics-500621, now list_nyc-tlc-analytics-500621_staging)
+[0m04:00:27.310465 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m04:00:27.640721 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'a12fbf26-01a7-4d3e-be74-042a4dc06d11', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x723f9e25c560>]}
+[0m04:00:27.641826 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m04:00:27.642537 [info ] [MainThread]: 
+[0m04:00:27.661032 [debug] [Thread-1 (]: Began running node model.nyc_tlc_analytics.dim_location
+[0m04:00:27.661895 [info ] [Thread-1 (]: 1 of 1 START sql table model staging.dim_location .............................. [RUN]
+[0m04:00:27.662592 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_nyc-tlc-analytics-500621_staging, now model.nyc_tlc_analytics.dim_location)
+[0m04:00:27.663118 [debug] [Thread-1 (]: Began compiling node model.nyc_tlc_analytics.dim_location
+[0m04:00:27.673202 [debug] [Thread-1 (]: Writing injected SQL for node "model.nyc_tlc_analytics.dim_location"
+[0m04:00:27.674060 [debug] [Thread-1 (]: Began executing node model.nyc_tlc_analytics.dim_location
+[0m04:00:27.720749 [debug] [Thread-1 (]: Writing runtime sql for node "model.nyc_tlc_analytics.dim_location"
+[0m04:00:27.721611 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m04:00:27.770856 [debug] [Thread-1 (]: On model.nyc_tlc_analytics.dim_location: /* {"app": "dbt", "dbt_version": "1.8.0", "profile_name": "nyc_tlc_analytics", "target_name": "dev", "node_id": "model.nyc_tlc_analytics.dim_location"} */
+
+  
+    
+
+    create or replace table `nyc-tlc-analytics-500621`.`staging`.`dim_location`
+      
+    
+    
+
+    OPTIONS()
+    as (
+      SELECT LocationID as location_id, Borough as borough, Zone as zone, service_zone
+from `nyc-tlc-analytics-500621`.`staging`.`taxi_zone_lookup`
+    );
+  
+[0m04:00:28.559805 [debug] [Thread-1 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=nyc-tlc-analytics-500621&j=bq:US:464141e7-4bca-4612-96d5-1f9149a3efaf&page=queryresults
+[0m04:00:30.410476 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'a12fbf26-01a7-4d3e-be74-042a4dc06d11', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x723fb51e0bf0>]}
+[0m04:00:30.411341 [info ] [Thread-1 (]: 1 of 1 OK created sql table model staging.dim_location ......................... [[32mCREATE TABLE (265.0 rows, 12.1 KiB processed)[0m in 2.75s]
+[0m04:00:30.412045 [debug] [Thread-1 (]: Finished running node model.nyc_tlc_analytics.dim_location
+[0m04:00:30.414037 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m04:00:30.414465 [debug] [MainThread]: Connection 'model.nyc_tlc_analytics.dim_location' was properly closed.
+[0m04:00:30.414920 [info ] [MainThread]: 
+[0m04:00:30.415326 [info ] [MainThread]: Finished running 1 table model in 0 hours 0 minutes and 3.47 seconds (3.47s).
+[0m04:00:30.416358 [debug] [MainThread]: Command end result
+[0m04:00:30.467792 [info ] [MainThread]: 
+[0m04:00:30.468749 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m04:00:30.469396 [info ] [MainThread]: 
+[0m04:00:30.469951 [info ] [MainThread]: Done. PASS=1 WARN=0 ERROR=0 SKIP=0 TOTAL=1
+[0m04:00:30.470954 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 6.9595633, "process_user_time": 4.429083, "process_kernel_time": 0.578529, "process_mem_max_rss": "237936", "process_in_blocks": "76528", "process_out_blocks": "3064"}
+[0m04:00:30.471498 [debug] [MainThread]: Command `dbt run` succeeded at 04:00:30.471376 after 6.96 seconds
+[0m04:00:30.472242 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x723fb8a73080>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x723fb4936e70>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x723fb4933740>]}
+[0m04:00:30.473155 [debug] [MainThread]: Flushing usage events
+[0m04:01:57.003570 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x73e277f891c0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x73e277c6cb30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x73e278bfc5f0>]}
+
+
+============================== 04:01:57.011100 | 1636240d-0a93-48a6-b872-9dd07217e673 ==============================
+[0m04:01:57.011100 [info ] [MainThread]: Running with dbt=1.8.0
+[0m04:01:57.011769 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/home/vscode/.dbt', 'debug': 'False', 'warn_error': 'None', 'log_path': '/workspaces/nyc-tlc-analytics/dbt/logs', 'version_check': 'True', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'introspect': 'True', 'invocation_command': 'dbt run --select dim_location', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m04:01:58.254007 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '1636240d-0a93-48a6-b872-9dd07217e673', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x73e2760bb3e0>]}
+[0m04:01:58.316656 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '1636240d-0a93-48a6-b872-9dd07217e673', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x73e2646173b0>]}
+[0m04:01:58.317412 [info ] [MainThread]: Registered adapter: bigquery=1.8.0
+[0m04:01:58.543205 [debug] [MainThread]: checksum: dbb12d416fdb55e3665e4828703bbedf40c5c90ed7ca6ff39bbbfb29b12b0a92, vars: {}, profile: , target: , version: 1.8.0
+[0m04:01:58.735048 [info ] [MainThread]: Unable to do partial parsing because a project config has changed
+[0m04:01:58.735659 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': '1636240d-0a93-48a6-b872-9dd07217e673', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x73e25fcca930>]}
+[0m04:02:00.056993 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '1636240d-0a93-48a6-b872-9dd07217e673', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x73e25fb75040>]}
+[0m04:02:00.147343 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '1636240d-0a93-48a6-b872-9dd07217e673', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x73e25f5f1be0>]}
+[0m04:02:00.147922 [info ] [MainThread]: Found 11 models, 1 seed, 4 sources, 484 macros
+[0m04:02:00.148352 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '1636240d-0a93-48a6-b872-9dd07217e673', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x73e25f422de0>]}
+[0m04:02:00.150025 [info ] [MainThread]: 
+[0m04:02:00.150713 [debug] [MainThread]: Acquiring new bigquery connection 'master'
+[0m04:02:00.151708 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_nyc-tlc-analytics-500621'
+[0m04:02:00.152161 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m04:02:00.440825 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_nyc-tlc-analytics-500621, now create_nyc-tlc-analytics-500621_staging_marts)
+[0m04:02:00.441492 [debug] [ThreadPool]: Creating schema "database: "nyc-tlc-analytics-500621"
+schema: "staging_marts"
+"
+[0m04:02:00.452334 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m04:02:00.498790 [debug] [ThreadPool]: On create_nyc-tlc-analytics-500621_staging_marts: /* {"app": "dbt", "dbt_version": "1.8.0", "profile_name": "nyc_tlc_analytics", "target_name": "dev", "connection_name": "create_nyc-tlc-analytics-500621_staging_marts"} */
+create schema if not exists `nyc-tlc-analytics-500621`.`staging_marts`
+  
+[0m04:02:00.951363 [debug] [ThreadPool]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=nyc-tlc-analytics-500621&j=bq:US:9ae6edd6-e45d-4f88-b3bd-c5610cedb5fe&page=queryresults
+[0m04:02:02.555342 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly create_nyc-tlc-analytics-500621_staging_marts, now list_nyc-tlc-analytics-500621_staging_marts)
+[0m04:02:02.555992 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m04:02:02.556586 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_nyc-tlc-analytics-500621_staging'
+[0m04:02:02.557103 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m04:02:02.899269 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '1636240d-0a93-48a6-b872-9dd07217e673', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x73e2647203e0>]}
+[0m04:02:02.900009 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m04:02:02.900423 [info ] [MainThread]: 
+[0m04:02:02.910422 [debug] [Thread-1 (]: Began running node model.nyc_tlc_analytics.dim_location
+[0m04:02:02.911052 [info ] [Thread-1 (]: 1 of 1 START sql table model staging_marts.dim_location ........................ [RUN]
+[0m04:02:02.911614 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_nyc-tlc-analytics-500621_staging, now model.nyc_tlc_analytics.dim_location)
+[0m04:02:02.912032 [debug] [Thread-1 (]: Began compiling node model.nyc_tlc_analytics.dim_location
+[0m04:02:02.920279 [debug] [Thread-1 (]: Writing injected SQL for node "model.nyc_tlc_analytics.dim_location"
+[0m04:02:02.921032 [debug] [Thread-1 (]: Began executing node model.nyc_tlc_analytics.dim_location
+[0m04:02:02.956133 [debug] [Thread-1 (]: Writing runtime sql for node "model.nyc_tlc_analytics.dim_location"
+[0m04:02:02.956916 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m04:02:03.007317 [debug] [Thread-1 (]: On model.nyc_tlc_analytics.dim_location: /* {"app": "dbt", "dbt_version": "1.8.0", "profile_name": "nyc_tlc_analytics", "target_name": "dev", "node_id": "model.nyc_tlc_analytics.dim_location"} */
+
+  
+    
+
+    create or replace table `nyc-tlc-analytics-500621`.`staging_marts`.`dim_location`
+      
+    
+    
+
+    OPTIONS()
+    as (
+      SELECT LocationID as location_id, Borough as borough, Zone as zone, service_zone
+from `nyc-tlc-analytics-500621`.`staging`.`taxi_zone_lookup`
+    );
+  
+[0m04:02:03.763262 [debug] [Thread-1 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=nyc-tlc-analytics-500621&j=bq:US:7a1b08e7-57da-498c-82e0-959d25ad19af&page=queryresults
+[0m04:02:05.653042 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '1636240d-0a93-48a6-b872-9dd07217e673', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x73e25f52cb00>]}
+[0m04:02:05.653891 [info ] [Thread-1 (]: 1 of 1 OK created sql table model staging_marts.dim_location ................... [[32mCREATE TABLE (265.0 rows, 12.1 KiB processed)[0m in 2.74s]
+[0m04:02:05.654673 [debug] [Thread-1 (]: Finished running node model.nyc_tlc_analytics.dim_location
+[0m04:02:05.656320 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m04:02:05.656709 [debug] [MainThread]: Connection 'list_nyc-tlc-analytics-500621_staging_marts' was properly closed.
+[0m04:02:05.657030 [debug] [MainThread]: Connection 'model.nyc_tlc_analytics.dim_location' was properly closed.
+[0m04:02:05.657383 [info ] [MainThread]: 
+[0m04:02:05.657837 [info ] [MainThread]: Finished running 1 table model in 0 hours 0 minutes and 5.51 seconds (5.51s).
+[0m04:02:05.658629 [debug] [MainThread]: Command end result
+[0m04:02:05.688626 [info ] [MainThread]: 
+[0m04:02:05.689217 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m04:02:05.689670 [info ] [MainThread]: 
+[0m04:02:05.690137 [info ] [MainThread]: Done. PASS=1 WARN=0 ERROR=0 SKIP=0 TOTAL=1
+[0m04:02:05.691147 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 8.736003, "process_user_time": 4.635097, "process_kernel_time": 0.489055, "process_mem_max_rss": "238464", "process_out_blocks": "3064", "process_in_blocks": "0"}
+[0m04:02:05.691698 [debug] [MainThread]: Command `dbt run` succeeded at 04:02:05.691590 after 8.74 seconds
+[0m04:02:05.692096 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x73e276545af0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x73e27979aa20>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x73e2764fd280>]}
+[0m04:02:05.692487 [debug] [MainThread]: Flushing usage events

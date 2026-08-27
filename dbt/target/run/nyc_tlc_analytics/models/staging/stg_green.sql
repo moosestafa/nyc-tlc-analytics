@@ -1,4 +1,8 @@
-SELECT 
+
+
+  create or replace view `nyc-tlc-analytics-500621`.`staging`.`stg_green`
+  OPTIONS()
+  as SELECT 
 VendorID AS vendor_id,
 lpep_pickup_datetime AS pickup_datetime,
 lpep_dropoff_datetime AS dropoff_datetime,
@@ -20,4 +24,5 @@ payment_type AS payment_type,
 trip_type AS pickup_type,
 congestion_surcharge AS congestion_surcharge,
 'green' AS trip_type
-from {{source('raw','green_trips')}}
+from `nyc-tlc-analytics-500621`.`raw`.`green_trips`;
+
