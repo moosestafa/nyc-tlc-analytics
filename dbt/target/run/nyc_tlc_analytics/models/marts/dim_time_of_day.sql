@@ -1,4 +1,15 @@
-with hour_spine as (
+
+  
+    
+
+    create or replace table `nyc-tlc-analytics-500621`.`marts`.`dim_time_of_day`
+      
+    
+    
+
+    OPTIONS()
+    as (
+      with hour_spine as (
 
     select hour
     from unnest(generate_array(0, 23)) as hour
@@ -18,3 +29,5 @@ select
     end as time_of_day
 
 from hour_spine
+    );
+  

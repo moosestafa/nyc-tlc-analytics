@@ -1,4 +1,15 @@
-with yellow as (
+
+  
+    
+
+    create or replace table `nyc-tlc-analytics-500621`.`marts`.`fct_trips`
+      
+    
+    
+
+    OPTIONS()
+    as (
+      with yellow as (
 
     select
         trip_type,
@@ -22,7 +33,7 @@ with yellow as (
         tolls_amount,
         total_amount,
         payment_type
-    from {{ ref('stg_yellow') }}
+    from `nyc-tlc-analytics-500621`.`staging`.`stg_yellow`
 
 ),
 
@@ -50,7 +61,7 @@ green as (
         tolls_amount,
         total_amount,
         payment_type
-    from {{ ref('stg_green') }}
+    from `nyc-tlc-analytics-500621`.`staging`.`stg_green`
 
 ),
 
@@ -87,7 +98,7 @@ fhvhv as (
         cast(null as float64) as total_amount,
         cast(null as int64) as payment_type
 
-    from {{ ref('stg_fhvhv') }}
+    from `nyc-tlc-analytics-500621`.`staging`.`stg_fhvhv`
 
 ),
 fhv as (
@@ -123,7 +134,7 @@ fhv as (
 
         cast(null as int64) as payment_type
 
-    from {{ ref('stg_fhv') }}
+    from `nyc-tlc-analytics-500621`.`staging`.`stg_fhv`
 
 )
 select * from yellow
@@ -132,4 +143,6 @@ select * from green
 union all
 select * from fhvhv
 union all 
-select * from fhv 
+select * from fhv
+    );
+  

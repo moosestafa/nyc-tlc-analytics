@@ -1,4 +1,15 @@
-with date_spine as (
+
+  
+    
+
+    create or replace table `nyc-tlc-analytics-500621`.`marts`.`dim_date`
+      
+    
+    
+
+    OPTIONS()
+    as (
+      with date_spine as (
 
     select full_date
     from unnest(
@@ -29,3 +40,5 @@ select
     extract(dayofweek from full_date) in (1, 7) as is_weekend
 
 from date_spine
+    );
+  
