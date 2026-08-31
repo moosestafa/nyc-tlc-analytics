@@ -2,7 +2,7 @@
   
     
 
-    create or replace table `nyc-tlc-analytics-500621`.`staging_marts`.`dim_location`
+    create or replace table `nyc-tlc-analytics-500621`.`marts`.`dim_location`
       
     
     
