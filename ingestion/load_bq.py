@@ -22,17 +22,17 @@ def create_datasets():
         dataset.location = "US"
         dataset = bq_client.create_dataset(dataset, timeout=30, exists_ok=True)  #
     except exceptions.NotFound as e:
-        print(f"Table, dataset, or project not found: {e.message}")
-    
+        print(f"Table, dataset, or project not found: {e}")
+        raise
     except exceptions.BadRequest as e:
-        print(f"SQL Syntax or bad request error: {e.message}")
-    
+        print(f"SQL Syntax or bad request error: {e}")
+        raise
     except exceptions.Forbidden as e:
-        print(f"Permission denied / IAM error: {e.message}")
-    
+        print(f"Permission denied / IAM error: {e}")
+        raise
     except exceptions.GoogleAPICallError as e:
-        print(f"Generic BigQuery API error occurred: {e.message}")
-
+        print(f"Generic BigQuery API error occurred: {e}")
+        raise
         
 
 def config_data():
@@ -53,13 +53,15 @@ def load_table(trip_type, year, month):
         bq_client.load_table_from_uri(source_uri, destination_table, job_config=load_config).result()
 
     except exceptions.NotFound as e:
-        print(f"Table, dataset, or project not found: {e.message}")
-    
+        print(f"Table, dataset, or project not found: {e}")
+        raise
     except exceptions.BadRequest as e:
-        print(f"SQL Syntax or bad request error: {e.message}")
-    
+        print(f"SQL Syntax or bad request error: {e}")
+        raise
     except exceptions.Forbidden as e:
-        print(f"Permission denied / IAM error: {e.message}")
-    
+        print(f"Permission denied / IAM error: {e}")
+        raise
     except exceptions.GoogleAPICallError as e:
-        print(f"Generic BigQuery API error occurred: {e.message}")
+        print(f"Generic BigQuery API error occurred: {e}")
+        raise
+
