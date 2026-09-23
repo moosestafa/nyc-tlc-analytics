@@ -13,7 +13,7 @@ with all_values as (
         trip_type as value_field,
         count(*) as n_records
 
-    from `nyc-tlc-analytics-500621`.`dev_marts`.`fct_trips`
+    from `nyc-tlc-analytics-500621`.`dev_marts`.`mart_zone_hourly`
     group by trip_type
 
 )

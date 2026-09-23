@@ -1,6 +1,6 @@
 
 
-  create or replace view `nyc-tlc-analytics-500621`.`staging`.`stg_green`
+  create or replace view `nyc-tlc-analytics-500621`.`dev_staging`.`stg_green`
   OPTIONS()
   as SELECT 
 VendorID AS vendor_id,

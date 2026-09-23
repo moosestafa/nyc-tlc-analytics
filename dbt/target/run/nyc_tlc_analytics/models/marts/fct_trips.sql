@@ -2,7 +2,7 @@
   
     
 
-    create or replace table `nyc-tlc-analytics-500621`.`marts`.`fct_trips`
+    create or replace table `nyc-tlc-analytics-500621`.`dev_marts`.`fct_trips`
       
     
     
@@ -33,7 +33,7 @@
         tolls_amount,
         total_amount,
         payment_type
-    from `nyc-tlc-analytics-500621`.`staging`.`stg_yellow`
+    from `nyc-tlc-analytics-500621`.`dev_staging`.`stg_yellow`
 
 ),
 
@@ -61,7 +61,7 @@ green as (
         tolls_amount,
         total_amount,
         payment_type
-    from `nyc-tlc-analytics-500621`.`staging`.`stg_green`
+    from `nyc-tlc-analytics-500621`.`dev_staging`.`stg_green`
 
 ),
 
@@ -98,7 +98,7 @@ fhvhv as (
         cast(null as float64) as total_amount,
         cast(null as int64) as payment_type
 
-    from `nyc-tlc-analytics-500621`.`staging`.`stg_fhvhv`
+    from `nyc-tlc-analytics-500621`.`dev_staging`.`stg_fhvhv`
 
 ),
 fhv as (
@@ -134,7 +134,7 @@ fhv as (
 
         cast(null as int64) as payment_type
 
-    from `nyc-tlc-analytics-500621`.`staging`.`stg_fhv`
+    from `nyc-tlc-analytics-500621`.`dev_staging`.`stg_fhv`
 
 )
 select * from yellow

@@ -1,6 +1,6 @@
 
 
-  create or replace view `nyc-tlc-analytics-500621`.`staging`.`stg_fhv`
+  create or replace view `nyc-tlc-analytics-500621`.`dev_staging`.`stg_fhv`
   OPTIONS()
   as SELECT
 

@@ -1,6 +1,6 @@
 
 
-  create or replace view `nyc-tlc-analytics-500621`.`staging`.`stg_yellow`
+  create or replace view `nyc-tlc-analytics-500621`.`dev_staging`.`stg_yellow`
   OPTIONS()
   as Select VendorID AS vendor_id,
 tpep_pickup_datetime AS pickup_datetime,

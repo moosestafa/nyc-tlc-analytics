@@ -5,7 +5,7 @@
 with dbt_test__target as (
 
   select full_date as unique_field
-  from `nyc-tlc-analytics-500621`.`marts`.`dim_date`
+  from `nyc-tlc-analytics-500621`.`dev_marts`.`dim_date`
   where full_date is not null
 
 )

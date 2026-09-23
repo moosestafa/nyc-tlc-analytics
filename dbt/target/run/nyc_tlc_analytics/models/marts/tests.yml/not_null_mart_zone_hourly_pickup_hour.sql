@@ -9,9 +9,9 @@ select
 
 
 
-select trip_type
-from `nyc-tlc-analytics-500621`.`dev_marts`.`fct_trips`
-where trip_type is null
+select pickup_hour
+from `nyc-tlc-analytics-500621`.`dev_marts`.`mart_zone_hourly`
+where pickup_hour is null
 
 
 

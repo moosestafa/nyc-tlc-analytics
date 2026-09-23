@@ -9,13 +9,13 @@ select
 
 with child as (
     select dropoff_location_id as from_field
-    from `nyc-tlc-analytics-500621`.`marts`.`fct_trips`
+    from `nyc-tlc-analytics-500621`.`dev_marts`.`fct_trips`
     where dropoff_location_id is not null
 ),
 
 parent as (
     select location_id as to_field
-    from `nyc-tlc-analytics-500621`.`marts`.`dim_location`
+    from `nyc-tlc-analytics-500621`.`dev_marts`.`dim_location`
 )
 
 select

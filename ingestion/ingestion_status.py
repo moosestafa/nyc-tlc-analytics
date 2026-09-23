@@ -15,7 +15,7 @@ def get_bq_client():
     )
 
 
-def is_loaded(trip_type, year, month):
+def is_loaded(trip_type, year, month,source_version):
     client = get_bq_client()
 
     query = f"""
@@ -25,6 +25,7 @@ def is_loaded(trip_type, year, month):
           AND source_year = @source_year
           AND source_month = @source_month
           AND status = 'loaded'
+          AND source_version = @source_version
         LIMIT 1
     """
 
@@ -33,6 +34,7 @@ def is_loaded(trip_type, year, month):
             bigquery.ScalarQueryParameter("trip_type", "STRING", trip_type),
             bigquery.ScalarQueryParameter("source_year", "INT64", year),
             bigquery.ScalarQueryParameter("source_month", "INT64", month),
+            bigquery.ScalarQueryParameter("source_version","STRING",source_version)
         ]
     )
 
@@ -46,6 +48,7 @@ def record_status(
     year,
     month,
     status,
+    source_version=None,
     gcs_uri=None,
     attempt=None,
     bigquery_job_id=None,
@@ -59,7 +62,7 @@ def record_status(
         "trip_type": trip_type,
         "source_year": year,
         "source_month": month,
-        "source_version": None,
+        "source_version": source_version,
         "gcs_uri": gcs_uri,
         "status": status,
         "attempt": attempt,
@@ -73,4 +76,3 @@ def record_status(
 
     if errors:
         raise RuntimeError(f"Failed to write ingestion status: {errors}")
-

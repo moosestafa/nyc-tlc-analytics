@@ -1,9 +1,4 @@
-select
-      count(*) as failures,
-      count(*) != 0 as should_warn,
-      count(*) != 0 as should_error
-    from (
-      
+
     
     
 
@@ -13,7 +8,7 @@ with all_values as (
         trip_type as value_field,
         count(*) as n_records
 
-    from `nyc-tlc-analytics-500621`.`dev_marts`.`fct_trips`
+    from `nyc-tlc-analytics-500621`.`dev_marts`.`mart_zone_hourly`
     group by trip_type
 
 )
@@ -25,6 +20,3 @@ where value_field not in (
 )
 
 
-
-      
-    ) dbt_internal_test

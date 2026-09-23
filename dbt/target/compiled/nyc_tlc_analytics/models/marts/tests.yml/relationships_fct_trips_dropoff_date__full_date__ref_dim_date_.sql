@@ -4,13 +4,13 @@
 
 with child as (
     select dropoff_date as from_field
-    from `nyc-tlc-analytics-500621`.`marts`.`fct_trips`
+    from `nyc-tlc-analytics-500621`.`dev_marts`.`fct_trips`
     where dropoff_date is not null
 ),
 
 parent as (
     select full_date as to_field
-    from `nyc-tlc-analytics-500621`.`marts`.`dim_date`
+    from `nyc-tlc-analytics-500621`.`dev_marts`.`dim_date`
 )
 
 select

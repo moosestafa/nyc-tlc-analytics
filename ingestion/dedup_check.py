@@ -35,3 +35,24 @@ def dedup_check(trip_type, year, month):
     except Exception as e:
         print(f"Unexpected error: {e}")
         raise
+
+def get_source_version(trip_type, year, month):
+    key_json = json.loads(os.environ["GCP_SA_KEY"])
+    credentials = service_account.Credentials.from_service_account_info(key_json)
+
+    storage_client = storage.Client(
+        credentials=credentials,
+        project=os.environ["GCP_PROJECT_ID"]
+    )
+
+    bucket = storage_client.bucket("nyc-tlc-raw-500621")
+
+    blob = bucket.get_blob(
+        f"{trip_type}/{year}/{month:02d}/"
+        f"{trip_type}-{year}-{month:02d}.parquet"
+    )
+
+    if blob is None:
+        return None
+
+    return str(blob.generation)

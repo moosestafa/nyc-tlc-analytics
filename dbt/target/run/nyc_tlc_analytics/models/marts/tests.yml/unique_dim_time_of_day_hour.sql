@@ -10,7 +10,7 @@ select
 with dbt_test__target as (
 
   select hour as unique_field
-  from `nyc-tlc-analytics-500621`.`marts`.`dim_time_of_day`
+  from `nyc-tlc-analytics-500621`.`dev_marts`.`dim_time_of_day`
   where hour is not null
 
 )

@@ -10,7 +10,7 @@ select
 with dbt_test__target as (
 
   select location_id as unique_field
-  from `nyc-tlc-analytics-500621`.`marts`.`dim_location`
+  from `nyc-tlc-analytics-500621`.`dev_marts`.`dim_location`
   where location_id is not null
 
 )

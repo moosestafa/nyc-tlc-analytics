@@ -4,67 +4,88 @@ models:
   - name: dim_date
     columns:
       - name: full_date
-        tests:
+        data_tests:
           - unique
           - not_null
 
   - name: dim_location
     columns:
       - name: location_id
-        tests:
+        data_tests:
           - unique
           - not_null
 
   - name: dim_time_of_day
     columns:
       - name: hour
-        tests:
+        data_tests:
           - unique
           - not_null
 
   - name: fct_trips
     columns:
       - name: trip_type
-        tests:
+        data_tests:
           - not_null
           - accepted_values:
               values: ['yellow', 'green', 'fhvhv', 'fhv']
 
       - name: pickup_datetime
-        tests:
+        data_tests:
           - not_null
+
       - name: pickup_date
-        tests:
+        data_tests:
           - relationships:
               to: ref('dim_date')
               field: full_date
 
       - name: dropoff_date
-        tests:
+        data_tests:
           - relationships:
               to: ref('dim_date')
               field: full_date
 
       - name: pickup_hour
-        tests:
+        data_tests:
           - relationships:
               to: ref('dim_time_of_day')
               field: hour
 
       - name: dropoff_hour
-        tests:
+        data_tests:
           - relationships:
               to: ref('dim_time_of_day')
               field: hour
 
       - name: pickup_location_id
-        tests:
+        data_tests:
           - relationships:
               to: ref('dim_location')
               field: location_id
 
       - name: dropoff_location_id
-        tests:
+        data_tests:
           - relationships:
               to: ref('dim_location')
               field: location_id
+
+  - name: mart_zone_hourly
+    columns:
+      - name: pickup_date
+        data_tests:
+          - not_null
+
+      - name: pickup_hour
+        data_tests:
+          - not_null
+
+      - name: trip_type
+        data_tests:
+          - not_null
+          - accepted_values:
+              values: ['yellow', 'green', 'fhvhv', 'fhv']
+
+      - name: pickup_location_id
+        data_tests:
+          - not_null
