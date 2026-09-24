@@ -1,31 +1,53 @@
 import os
+import json
 
 import pyarrow as pa
 import pyarrow.compute as pc
 import pyarrow.parquet as pq
 
+from google.cloud import bigquery
+from google.oauth2 import service_account
 
-SCHEMA_FIXES = {
-    "yellow": {
-        "passenger_count": pa.int64(),
-        "RatecodeID": pa.int64(),
-    },
-    "green": {
-        "RatecodeID": pa.int64(),
-    },
-    "fhv": {
-        "SR_Flag": pa.int64(),
-    },
-}
+
+def get_bq_client():
+    key_json = json.loads(os.environ["GCP_SA_KEY"])
+
+    credentials = service_account.Credentials.from_service_account_info(
+        key_json
+    )
+
+    return bigquery.Client(
+        credentials=credentials,
+        project=os.environ["GCP_PROJECT_ID"]
+    )
+
+
+def get_target_type(bq_type):
+
+    if bq_type in ("INTEGER", "INT64"):
+        return pa.int64()
+
+    if bq_type in ("FLOAT", "FLOAT64"):
+        return pa.float64()
+
+    return None
 
 
 def normalize_schema(filepath, trip_type):
 
-    fixes = SCHEMA_FIXES.get(trip_type)
+    bq_client = get_bq_client()
 
-    # FHVHV currently needs no fix
-    if not fixes:
-        return
+    table_id = (
+        f"{os.environ['GCP_PROJECT_ID']}"
+        f".raw.{trip_type}_trips"
+    )
+
+    bq_table = bq_client.get_table(table_id)
+
+    target_schema = {
+        field.name.lower(): field
+        for field in bq_table.schema
+    }
 
     parquet_file = pq.ParquetFile(filepath)
 
@@ -34,20 +56,59 @@ def normalize_schema(filepath, trip_type):
     writer = None
 
     try:
-        for batch in parquet_file.iter_batches(batch_size=250_000):
+
+        for batch in parquet_file.iter_batches(
+            batch_size=250_000
+        ):
 
             table = pa.Table.from_batches([batch])
 
-            for column_name, target_type in fixes.items():
+            source_columns = {
+                name.lower(): name
+                for name in table.column_names
+            }
 
-                if column_name not in table.column_names:
+            for lower_name, bq_field in target_schema.items():
+
+                if lower_name not in source_columns:
                     continue
 
-                column_index = table.schema.get_field_index(column_name)
+                column_name = source_columns[lower_name]
+
+                target_type = get_target_type(
+                    bq_field.field_type
+                )
+
+                # We're only normalizing numeric schema drift.
+                if target_type is None:
+                    continue
+
                 column = table[column_name]
 
-                # Convert floating NaN values to NULL before
-                # casting FLOAT -> INTEGER
+                needs_cast = False
+
+                if (
+                    pa.types.is_integer(target_type)
+                    and not pa.types.is_integer(column.type)
+                ):
+                    needs_cast = True
+
+                elif (
+                    pa.types.is_floating(target_type)
+                    and not pa.types.is_floating(column.type)
+                ):
+                    needs_cast = True
+
+                if not needs_cast:
+                    continue
+
+                print(
+                    f"Normalizing {trip_type}.{column_name}: "
+                    f"{column.type} -> {target_type}"
+                )
+
+                # Nullable integer columns often arrive as FLOAT
+                # because NULL/NaN values are present.
                 if pa.types.is_floating(column.type):
                     column = pc.if_else(
                         pc.is_nan(column),
@@ -59,6 +120,10 @@ def normalize_schema(filepath, trip_type):
                     column,
                     target_type,
                     safe=False
+                )
+
+                column_index = table.schema.get_field_index(
+                    column_name
                 )
 
                 table = table.set_column(
@@ -78,9 +143,15 @@ def normalize_schema(filepath, trip_type):
         if writer is not None:
             writer.close()
 
-        os.replace(temp_path, filepath)
+        os.replace(
+            temp_path,
+            filepath
+        )
 
-        print(f"Normalized schema for {trip_type}: {filepath}")
+        print(
+            f"Schema normalization complete: "
+            f"{trip_type}"
+        )
 
     except Exception:
 

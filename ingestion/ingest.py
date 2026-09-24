@@ -100,42 +100,75 @@ def ingest(trip_type, year, month):
 
 
 if __name__ == "__main__":
+    from datetime import date
 
-    trip_types = [
-        "yellow",
-        "green",
-        "fhv",
-        "fhvhv"
-    ]
+    trip_types = ["yellow", "green", "fhv"]
 
-    for year in [2019, 2024]:
+    # Start of the continuous analytical window
+    start_year = 2019
+    start_month = 3
 
-        months = (
-            range(2, 13)
-            if year == 2019
-            else range(1, 3)
-        )
+    today = date.today()
 
-        for month in months:
+    # Previous completed calendar month
+    if today.month == 1:
+        end_year = today.year - 1
+        end_month = 12
+    else:
+        end_year = today.year
+        end_month = today.month - 1
 
-            for trip_type in trip_types:
+    failures = []
 
-                print(
-                    f"\nStarting ingestion: "
-                    f"{trip_type} {year}-{month:02d}"
+    year = start_year
+    month = start_month
+
+    while (year, month) <= (end_year, end_month):
+
+        for trip_type in trip_types:
+            print(
+                f"\nStarting ingestion: "
+                f"{trip_type} {year}-{month:02d}"
+            )
+
+            try:
+                ingest(
+                    trip_type,
+                    year,
+                    month
                 )
 
-                try:
-                    ingest(
-                        trip_type,
-                        year,
-                        month
-                    )
+            except Exception as e:
+                print(
+                    f"FAILED: "
+                    f"{trip_type} "
+                    f"{year}-{month:02d}: "
+                    f"{e}"
+                )
 
-                except Exception as e:
-                    print(
-                        f"FAILED: "
-                        f"{trip_type} "
-                        f"{year}-{month:02d}: "
-                        f"{e}"
-                    )
+                failures.append(
+                    (trip_type, year, month, str(e))
+                )
+
+        # Move to next month
+        if month == 12:
+            year += 1
+            month = 1
+        else:
+            month += 1
+
+    if failures:
+        print("\nIngestion completed with failures:")
+
+        for trip_type, year, month, error in failures:
+            print(
+                f"  {trip_type} "
+                f"{year}-{month:02d}: "
+                f"{error}"
+            )
+
+        raise RuntimeError(
+            f"{len(failures)} ingestion load(s) failed."
+        )
+
+    print("\nIngestion completed successfully.")
